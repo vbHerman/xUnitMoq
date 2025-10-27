@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "kPDexpQEciZwcmeOXzuNwBlHXQIyey5ikeClqiVcjGQ=",
+  "Source": "Xunit.API",
+  "BasePath": "_content/Xunit.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
