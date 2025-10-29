@@ -44,7 +44,7 @@ namespace Toppine.Repository
                                         Value = p.RemarkGroup,
                                         Description = p.Description,
                                     })
-                .Where(SqlWith.NoLock)
+                .With(SqlWith.NoLock)
                 .ToListAsync();
             // 存入缓存（项目中默认无过期时间，按需添加）
             ManualDataCache.Instance.Set(cacheKey, itemList);

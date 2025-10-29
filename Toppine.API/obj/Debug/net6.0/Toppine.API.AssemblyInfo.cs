@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Toppine.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2682b753caa4ac6bfc1f51e723de772b2d4098cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e8aed8f0ad4851edeff82f354fb6d3141299ab5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Toppine.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Toppine.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

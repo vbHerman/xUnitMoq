@@ -15,8 +15,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Toppine.Configuration\Toppine.Configuration.csproj" />
     <ProjectReference Include="..\Toppine.Core\Toppine.Core.csproj" />
+    <ProjectReference Include="..\Toppine.IRepository\Toppine.IRepository.csproj" />
     <ProjectReference Include="..\Toppine.IServices\Toppine.IServices.csproj" />
+    <ProjectReference Include="..\Toppine.Loging\Toppine.Loging.csproj" />
+    <ProjectReference Include="..\Toppine.Mapping\Toppine.Mapping.csproj" />
+    <ProjectReference Include="..\Toppine.Model\Toppine.Model.csproj" />
+    <ProjectReference Include="..\Toppine.Repository\Toppine.Repository.csproj" />
     <ProjectReference Include="..\Toppine.Services\Toppine.Services.csproj" />
   </ItemGroup>
 

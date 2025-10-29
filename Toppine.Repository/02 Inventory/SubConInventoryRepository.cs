@@ -26,7 +26,7 @@ namespace Toppine.Repository
                         Value = p.Code,
                         Description = p.EnglishName,
                     })
-                .Where(SqlWith.NoLock)
+                .With(SqlWith.NoLock)
                 .ToListAsync();
                 ManualDataCache.Instance.Set(cacheKey, itemList);
             }

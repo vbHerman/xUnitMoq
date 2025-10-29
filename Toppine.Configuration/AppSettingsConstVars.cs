@@ -9,14 +9,14 @@ namespace Toppine.Configuration
     {
 
         #region 全局地址================================================================================
-        /// <summary>
-        /// 系统后端地址
-        /// </summary>
-        public static readonly string AppConfigAppUrl = AppSettingsHelper.GetContent("AppConfig", "AppUrl");
-        /// <summary>
-        /// 系统接口地址
-        /// </summary>
-        public static readonly string AppConfigAppInterFaceUrl = AppSettingsHelper.GetContent("AppConfig", "AppInterFaceUrl");
+        ///// <summary>
+        ///// 系统后端地址
+        ///// </summary>
+        //public static readonly string AppConfigAppUrl = AppSettingsHelper.GetContent("AppConfig", "AppUrl");
+        ///// <summary>
+        ///// 系统接口地址
+        ///// </summary>
+        //public static readonly string AppConfigAppInterFaceUrl = AppSettingsHelper.GetContent("AppConfig", "AppInterFaceUrl");
         #endregion
 
         #region 数据库================================================================================
@@ -86,72 +86,6 @@ namespace Toppine.Configuration
         /// 用户访问记录-过滤ip
         /// </summary>
         public static readonly string MiddlewareRecordAccessLogsIgnoreApis = AppSettingsHelper.GetContent("Middleware", "RecordAccessLogs", "IgnoreApis");
-
-        #endregion
-
-        #region 支付================================================================================
-
-        /// <summary>
-        /// 微信支付回调
-        /// </summary>
-        public static readonly string PayCallBackWeChatPayUrl = AppSettingsHelper.GetContent("PayCallBack", "WeChatPayUrl");
-        /// <summary>
-        /// 微信退款回调
-        /// </summary>
-        public static readonly string PayCallBackWeChatRefundUrl = AppSettingsHelper.GetContent("PayCallBack", "WeChatRefundUrl");
-        /// <summary>
-        /// 支付宝支付回调
-        /// </summary>
-        public static readonly string PayCallBackAlipayUrl = AppSettingsHelper.GetContent("PayCallBack", "AlipayUrl");
-        /// <summary>
-        /// 支付宝退款回调
-        /// </summary>
-        public static readonly string PayCallBackAlipayRefundUrl = AppSettingsHelper.GetContent("PayCallBack", "AlipayRefundUrl");
-        #endregion
-
-        #region 易联云打印机================================================================================
-
-        /// <summary>
-        /// 是否开启
-        /// </summary>
-        public static readonly bool YiLianYunConfigEnabled = AppSettingsHelper.GetContent("YiLianYunConfig", "Enabled").ObjToBool();
-        /// <summary>
-        /// 应用ID
-        /// </summary>
-        public static readonly string YiLianYunConfigClientId = AppSettingsHelper.GetContent("YiLianYunConfig", "ClientId");
-        /// <summary>
-        /// 应用密钥
-        /// </summary>
-        public static readonly string YiLianYunConfigClientSecret = AppSettingsHelper.GetContent("YiLianYunConfig", "ClientSecret");
-        /// <summary>
-        /// 打印机设备号
-        /// </summary>
-        public static readonly string YiLianYunConfigMachineCode = AppSettingsHelper.GetContent("YiLianYunConfig", "MachineCode");
-        /// <summary>
-        /// 打印机终端密钥
-        /// </summary>
-        public static readonly string YiLianYunConfigMsign = AppSettingsHelper.GetContent("YiLianYunConfig", "Msign");
-        /// <summary>
-        /// 打印机名称
-        /// </summary>
-        public static readonly string YiLianYunConfigPrinterName = AppSettingsHelper.GetContent("YiLianYunConfig", "PrinterName");
-        /// <summary>
-        /// 打印机设置联系方式
-        /// </summary>
-        public static readonly string YiLianYunConfigPhone = AppSettingsHelper.GetContent("YiLianYunConfig", "Phone");
-
-        #endregion
-
-        #region HangFire定时任务================================================================================
-        /// <summary>
-        /// 登录账号
-        /// </summary>
-        public static readonly string HangFireLogin = AppSettingsHelper.GetContent("HangFire", "Login");
-        /// <summary>
-        /// 登录密码
-        /// </summary>
-        public static readonly string HangFirePassWord = AppSettingsHelper.GetContent("HangFire", "PassWord");
-
 
         #endregion
 

@@ -19,7 +19,7 @@ namespace Toppine.Repository
                    ID= i.ID,
                     Description= i.HRWContent
                 })
-                .Where(SqlWith.NoLock)
+                .With(SqlWith.NoLock)
                 .ToListAsync();
             return result;
         }

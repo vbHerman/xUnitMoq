@@ -1,10 +1,11 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Toppine.Configuration;
 using Toppine.Core.AutoFac;
 using Toppine.Core.Config;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.WebHost.UseUrls("http://*:5857", "https://*:5858");
+builder.Services.AddSingleton(new AppSettingsHelper(builder.Environment.ContentRootPath));
 // 1. Ìí¼Ó¿ØÖÆÆ÷
 builder.Services.AddControllers();
 

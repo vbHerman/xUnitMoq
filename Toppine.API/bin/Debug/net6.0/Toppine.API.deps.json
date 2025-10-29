@@ -13,8 +13,14 @@
           "Swashbuckle.AspNetCore.Swagger": "6.0.2",
           "Swashbuckle.AspNetCore.SwaggerGen": "6.0.2",
           "Swashbuckle.AspNetCore.SwaggerUI": "6.0.2",
+          "Toppine.Configuration": "1.0.0",
           "Toppine.Core": "1.0.0",
+          "Toppine.IRepository": "1.0.0",
           "Toppine.IServices": "1.0.0",
+          "Toppine.Loging": "1.0.0",
+          "Toppine.Mapping": "1.0.0",
+          "Toppine.Model": "1.0.0",
+          "Toppine.Repository": "1.0.0",
           "Toppine.Services": "1.0.0"
         },
         "runtime": {
@@ -1281,12 +1287,42 @@
           }
         }
       },
+      "Toppine.Mapping/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "Newtonsoft.Json": "13.0.3",
+          "Toppine.Model": "1.0.0"
+        },
+        "runtime": {
+          "Toppine.Mapping.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Toppine.Model/1.0.0": {
         "dependencies": {
           "SqlSugarCore": "5.1.4.206"
         },
         "runtime": {
           "Toppine.Model.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Toppine.Repository/1.0.0": {
+        "dependencies": {
+          "SqlSugar.IOC": "2.0.0",
+          "SqlSugarCore": "5.1.4.206",
+          "Toppine.Caching": "1.0.0",
+          "Toppine.Configuration": "1.0.0",
+          "Toppine.Core": "1.0.0",
+          "Toppine.IRepository": "1.0.0",
+          "Toppine.Model": "1.0.0"
+        },
+        "runtime": {
+          "Toppine.Repository.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -2035,7 +2071,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Toppine.Mapping/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Toppine.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Toppine.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -48,7 +48,7 @@ namespace Toppine.Model.ViewModels.DTO
         public int? UID { get; set; }
 
         //保存权限的列表
-        [NotMapped]
+        [SugarColumn(IsIgnore = true)]
         public DistrictSubconPermissonDto DSPermission { get; set; }
 
     }

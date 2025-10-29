@@ -1864,6 +1864,21 @@
           "bin/placeholder/Toppine.Loging.dll": {}
         }
       },
+      "Toppine.Mapping/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "Newtonsoft.Json": "13.0.3",
+          "Toppine.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Toppine.Mapping.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Toppine.Mapping.dll": {}
+        }
+      },
       "Toppine.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1875,6 +1890,25 @@
         },
         "runtime": {
           "bin/placeholder/Toppine.Model.dll": {}
+        }
+      },
+      "Toppine.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "SqlSugar.IOC": "2.0.0",
+          "SqlSugarCore": "5.1.4.206",
+          "Toppine.Caching": "1.0.0",
+          "Toppine.Configuration": "1.0.0",
+          "Toppine.Core": "1.0.0",
+          "Toppine.IRepository": "1.0.0",
+          "Toppine.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Toppine.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Toppine.Repository.dll": {}
         }
       },
       "Toppine.Services/1.0.0": {
@@ -5184,10 +5218,20 @@
       "path": "../Toppine.Loging/Toppine.Loging.csproj",
       "msbuildProject": "../Toppine.Loging/Toppine.Loging.csproj"
     },
+    "Toppine.Mapping/1.0.0": {
+      "type": "project",
+      "path": "../Toppine.Mapping/Toppine.Mapping.csproj",
+      "msbuildProject": "../Toppine.Mapping/Toppine.Mapping.csproj"
+    },
     "Toppine.Model/1.0.0": {
       "type": "project",
       "path": "../Toppine.Model/Toppine.Model.csproj",
       "msbuildProject": "../Toppine.Model/Toppine.Model.csproj"
+    },
+    "Toppine.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Toppine.Repository/Toppine.Repository.csproj",
+      "msbuildProject": "../Toppine.Repository/Toppine.Repository.csproj"
     },
     "Toppine.Services/1.0.0": {
       "type": "project",
@@ -5207,8 +5251,14 @@
       "Swashbuckle.AspNetCore.Swagger >= 6.0.2",
       "Swashbuckle.AspNetCore.SwaggerGen >= 6.0.2",
       "Swashbuckle.AspNetCore.SwaggerUI >= 6.0.2",
+      "Toppine.Configuration >= 1.0.0",
       "Toppine.Core >= 1.0.0",
+      "Toppine.IRepository >= 1.0.0",
       "Toppine.IServices >= 1.0.0",
+      "Toppine.Loging >= 1.0.0",
+      "Toppine.Mapping >= 1.0.0",
+      "Toppine.Model >= 1.0.0",
+      "Toppine.Repository >= 1.0.0",
       "Toppine.Services >= 1.0.0"
     ]
   },
@@ -5247,11 +5297,29 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\Toppine.Configuration.csproj": {
+              "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\Toppine.Configuration.csproj"
+            },
             "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Core\\Toppine.Core.csproj": {
               "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Core\\Toppine.Core.csproj"
             },
+            "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\Toppine.IRepository.csproj": {
+              "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\Toppine.IRepository.csproj"
+            },
             "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\Toppine.IServices.csproj": {
               "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\Toppine.IServices.csproj"
+            },
+            "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Loging\\Toppine.Loging.csproj": {
+              "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Loging\\Toppine.Loging.csproj"
+            },
+            "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Mapping\\Toppine.Mapping.csproj": {
+              "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Mapping\\Toppine.Mapping.csproj"
+            },
+            "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj": {
+              "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj"
+            },
+            "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\Toppine.Repository.csproj": {
+              "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\Toppine.Repository.csproj"
             },
             "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\Toppine.Services.csproj": {
               "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\Toppine.Services.csproj"
