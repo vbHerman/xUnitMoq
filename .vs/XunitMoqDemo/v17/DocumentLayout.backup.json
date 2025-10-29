@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Xunit.API\\Xunit.API.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\xunit.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Xunit.API\\Xunit.API.csproj|solutionrelative:xunit.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|solutionrelative:toppine.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Xunit.API\\Xunit.API.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\xunit.api\\controllers\\rrfcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Xunit.API\\Xunit.API.csproj|solutionrelative:xunit.api\\controllers\\rrfcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|solutionrelative:toppine.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C11D5104-E448-42FD-A1EA-6E59806A1838}|Xunit.IServices\\Xunit.IServices.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\xunit.iservices\\irrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C11D5104-E448-42FD-A1EA-6E59806A1838}|Xunit.IServices\\Xunit.IServices.csproj|solutionrelative:xunit.iservices\\irrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D46A28CF-0B4F-4DD6-8C26-AEAA1243BD7D}|Toppine.Core\\Toppine.Core.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.core\\autofac\\autofacmoduleregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D46A28CF-0B4F-4DD6-8C26-AEAA1243BD7D}|Toppine.Core\\Toppine.Core.csproj|solutionrelative:toppine.core\\autofac\\autofacmoduleregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAF96983-C7A1-42C3-B96B-CF4A093847F8}|Xunit.Services\\Xunit.Services.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\xunit.services\\rrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAF96983-C7A1-42C3-B96B-CF4A093847F8}|Xunit.Services\\Xunit.Services.csproj|solutionrelative:xunit.services\\rrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.api\\controllers\\rrfcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|solutionrelative:toppine.api\\controllers\\rrfcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C11D5104-E448-42FD-A1EA-6E59806A1838}|Toppine.IServices\\Toppine.IServices.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.iservices\\rrf\\irrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C11D5104-E448-42FD-A1EA-6E59806A1838}|Toppine.IServices\\Toppine.IServices.csproj|solutionrelative:toppine.iservices\\rrf\\irrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF96983-C7A1-42C3-B96B-CF4A093847F8}|Toppine.Services\\Toppine.Services.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.services\\rrf\\rrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAF96983-C7A1-42C3-B96B-CF4A093847F8}|Toppine.Services\\Toppine.Services.csproj|solutionrelative:toppine.services\\rrf\\rrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BB70AF2-9F81-4D4F-9DCD-FAEC9F7A2CE7}|Toppine.Model\\Toppine.Model.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.model\\entities\\03 page\\rrf\\rrf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BB70AF2-9F81-4D4F-9DCD-FAEC9F7A2CE7}|Toppine.Model\\Toppine.Model.csproj|solutionrelative:toppine.model\\entities\\03 page\\rrf\\rrf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +38,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RRF.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Entities\\03 Page\\RRF\\RRF.cs",
+              "RelativeDocumentMoniker": "Toppine.Model\\Entities\\03 Page\\RRF\\RRF.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Entities\\03 Page\\RRF\\RRF.cs",
+              "RelativeToolTip": "Toppine.Model\\Entities\\03 Page\\RRF\\RRF.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T07:02:20.277Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Toppine.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\appsettings.json",
+              "RelativeToolTip": "Toppine.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvw8AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-29T08:23:11.729Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -50,54 +89,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Xunit.API\\Program.cs",
-              "RelativeDocumentMoniker": "Xunit.API\\Program.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Xunit.API\\Program.cs",
-              "RelativeToolTip": "Xunit.API\\Program.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T01:48:55.457Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RRFController.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Xunit.API\\Controllers\\RRFController.cs",
-              "RelativeDocumentMoniker": "Xunit.API\\Controllers\\RRFController.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Xunit.API\\Controllers\\RRFController.cs",
-              "RelativeToolTip": "Xunit.API\\Controllers\\RRFController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAMAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Program.cs",
+              "RelativeDocumentMoniker": "Toppine.API\\Program.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Program.cs",
+              "RelativeToolTip": "Toppine.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T01:09:05.471Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RRFService.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Xunit.Services\\RRFService.cs",
-              "RelativeDocumentMoniker": "Xunit.Services\\RRFService.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Xunit.Services\\RRFService.cs",
-              "RelativeToolTip": "Xunit.Services\\RRFService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T01:09:41.772Z",
+              "WhenOpened": "2025-10-29T08:12:21.191Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IRRFService.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Xunit.IServices\\IRRFService.cs",
-              "RelativeDocumentMoniker": "Xunit.IServices\\IRRFService.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Xunit.IServices\\IRRFService.cs",
-              "RelativeToolTip": "Xunit.IServices\\IRRFService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
+              "Title": "AutofacModuleRegister.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Core\\AutoFac\\AutofacModuleRegister.cs",
+              "RelativeDocumentMoniker": "Toppine.Core\\AutoFac\\AutofacModuleRegister.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Core\\AutoFac\\AutofacModuleRegister.cs",
+              "RelativeToolTip": "Toppine.Core\\AutoFac\\AutofacModuleRegister.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAIA5wBMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T01:07:00.519Z",
+              "WhenOpened": "2025-10-29T08:05:43.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IRRFService.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\RRF\\IRRFService.cs",
+              "RelativeDocumentMoniker": "Toppine.IServices\\RRF\\IRRFService.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\RRF\\IRRFService.cs",
+              "RelativeToolTip": "Toppine.IServices\\RRF\\IRRFService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAArwA8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T08:02:52.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RRFService.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\RRF\\RRFService.cs",
+              "RelativeDocumentMoniker": "Toppine.Services\\RRF\\RRFService.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\RRF\\RRFService.cs",
+              "RelativeToolTip": "Toppine.Services\\RRF\\RRFService.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAYwC4AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T09:23:45.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RRFController.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Controllers\\RRFController.cs",
+              "RelativeDocumentMoniker": "Toppine.API\\Controllers\\RRFController.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Controllers\\RRFController.cs",
+              "RelativeToolTip": "Toppine.API\\Controllers\\RRFController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAjwDAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T02:16:13.55Z",
               "EditorCaption": ""
             }
           ]

@@ -1,0 +1,16 @@
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\bin\Debug\net6.0\Xunit.IServices.deps.json
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\bin\Debug\net6.0\Xunit.IServices.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\bin\Debug\net6.0\Xunit.IServices.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\obj\Debug\net6.0\Xunit.IServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\obj\Debug\net6.0\Xunit.IServices.AssemblyInfoInputs.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\obj\Debug\net6.0\Xunit.IServices.AssemblyInfo.cs
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\obj\Debug\net6.0\Xunit.IServices.csproj.CoreCompileInputs.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\obj\Debug\net6.0\Xunit.IServices.sourcelink.json
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\obj\Debug\net6.0\Xunit.IServices.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\obj\Debug\net6.0\refint\Xunit.IServices.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\obj\Debug\net6.0\Xunit.IServices.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\obj\Debug\net6.0\ref\Xunit.IServices.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\bin\Debug\net6.0\Xunit.Model.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\bin\Debug\net6.0\Xunit.Model.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\obj\Debug\net6.0\Xunit.IServices.csproj.AssemblyReference.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IServices\obj\Debug\net6.0\Xunit.IS.8E0104BF.Up2Date

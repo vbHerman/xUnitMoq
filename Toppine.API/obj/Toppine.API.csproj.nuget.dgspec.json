@@ -1,0 +1,832 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Toppine.API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Toppine.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Toppine.API.csproj",
+        "projectName": "Toppine.API",
+        "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Toppine.API.csproj",
+        "packagesPath": "C:\\Users\\11240\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11240\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Core\\Toppine.Core.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Core\\Toppine.Core.csproj"
+              },
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\Toppine.IServices.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\Toppine.IServices.csproj"
+              },
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\Toppine.Services.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\Toppine.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Autofac.Extras.DynamicProxy": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Caching\\Toppine.Caching.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Caching\\Toppine.Caching.csproj",
+        "projectName": "Toppine.Caching",
+        "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Caching\\Toppine.Caching.csproj",
+        "packagesPath": "C:\\Users\\11240\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Caching\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11240\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\Toppine.Configuration.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\Toppine.Configuration.csproj"
+              },
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Utility\\Toppine.Utility.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Utility\\Toppine.Utility.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.7.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\Toppine.Configuration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\Toppine.Configuration.csproj",
+        "projectName": "Toppine.Configuration",
+        "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\Toppine.Configuration.csproj",
+        "packagesPath": "C:\\Users\\11240\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11240\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Core\\Toppine.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Core\\Toppine.Core.csproj",
+        "projectName": "Toppine.Core",
+        "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Core\\Toppine.Core.csproj",
+        "packagesPath": "C:\\Users\\11240\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11240\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Caching\\Toppine.Caching.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Caching\\Toppine.Caching.csproj"
+              },
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\Toppine.Configuration.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\Toppine.Configuration.csproj"
+              },
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\Toppine.IRepository.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\Toppine.IRepository.csproj"
+              },
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Loging\\Toppine.Loging.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Loging\\Toppine.Loging.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Autofac.Extras.DynamicProxy": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "SqlSugar.IOC": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\Toppine.IRepository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\Toppine.IRepository.csproj",
+        "projectName": "Toppine.IRepository",
+        "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\Toppine.IRepository.csproj",
+        "packagesPath": "C:\\Users\\11240\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11240\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\Toppine.IServices.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\Toppine.IServices.csproj",
+        "projectName": "Toppine.IServices",
+        "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\Toppine.IServices.csproj",
+        "packagesPath": "C:\\Users\\11240\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11240\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Loging\\Toppine.Loging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Loging\\Toppine.Loging.csproj",
+        "projectName": "Toppine.Loging",
+        "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Loging\\Toppine.Loging.csproj",
+        "packagesPath": "C:\\Users\\11240\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Loging\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11240\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj"
+              },
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Utility\\Toppine.Utility.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Utility\\Toppine.Utility.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "NLog": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj",
+        "projectName": "Toppine.Model",
+        "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj",
+        "packagesPath": "C:\\Users\\11240\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11240\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "SqlSugarCore": {
+              "target": "Package",
+              "version": "[5.1.4.206, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\Toppine.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\Toppine.Services.csproj",
+        "projectName": "Toppine.Services",
+        "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\Toppine.Services.csproj",
+        "packagesPath": "C:\\Users\\11240\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11240\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\Toppine.IRepository.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\Toppine.IRepository.csproj"
+              },
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\Toppine.IServices.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\Toppine.IServices.csproj"
+              },
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Toppine.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Utility\\Toppine.Utility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Utility\\Toppine.Utility.csproj",
+        "projectName": "Toppine.Utility",
+        "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Utility\\Toppine.Utility.csproj",
+        "packagesPath": "C:\\Users\\11240\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Utility\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\11240\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\Toppine.Configuration.csproj": {
+                "projectPath": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Configuration\\Toppine.Configuration.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

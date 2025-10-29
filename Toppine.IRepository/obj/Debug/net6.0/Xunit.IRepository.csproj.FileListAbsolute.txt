@@ -1,0 +1,16 @@
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\bin\Debug\net6.0\Xunit.IRepository.deps.json
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\bin\Debug\net6.0\Xunit.IRepository.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\bin\Debug\net6.0\Xunit.IRepository.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\bin\Debug\net6.0\Xunit.Model.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\bin\Debug\net6.0\Xunit.Model.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\obj\Debug\net6.0\Xunit.IRepository.csproj.AssemblyReference.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\obj\Debug\net6.0\Xunit.IRepository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\obj\Debug\net6.0\Xunit.IRepository.AssemblyInfoInputs.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\obj\Debug\net6.0\Xunit.IRepository.AssemblyInfo.cs
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\obj\Debug\net6.0\Xunit.IRepository.csproj.CoreCompileInputs.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\obj\Debug\net6.0\Xunit.IRepository.sourcelink.json
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\obj\Debug\net6.0\Xunit.IR.BC56597B.Up2Date
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\obj\Debug\net6.0\Xunit.IRepository.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\obj\Debug\net6.0\refint\Xunit.IRepository.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\obj\Debug\net6.0\Xunit.IRepository.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.IRepository\obj\Debug\net6.0\ref\Xunit.IRepository.dll

@@ -1,0 +1,16 @@
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\bin\Debug\net6.0\Toppine.Configuration.deps.json
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\bin\Debug\net6.0\Toppine.Configuration.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\bin\Debug\net6.0\Toppine.Configuration.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\bin\Debug\net6.0\Toppine.Model.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\bin\Debug\net6.0\Toppine.Model.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\obj\Debug\net6.0\Toppine.Configuration.csproj.AssemblyReference.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\obj\Debug\net6.0\Toppine.Configuration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\obj\Debug\net6.0\Toppine.Configuration.AssemblyInfoInputs.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\obj\Debug\net6.0\Toppine.Configuration.AssemblyInfo.cs
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\obj\Debug\net6.0\Toppine.Configuration.csproj.CoreCompileInputs.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\obj\Debug\net6.0\Toppine.Configuration.sourcelink.json
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\obj\Debug\net6.0\Toppine..93B8F1BA.Up2Date
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\obj\Debug\net6.0\Toppine.Configuration.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\obj\Debug\net6.0\refint\Toppine.Configuration.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\obj\Debug\net6.0\Toppine.Configuration.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Configuration\obj\Debug\net6.0\ref\Toppine.Configuration.dll

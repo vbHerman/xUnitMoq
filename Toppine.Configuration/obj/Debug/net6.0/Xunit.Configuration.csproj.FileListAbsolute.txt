@@ -1,0 +1,16 @@
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\bin\Debug\net6.0\Xunit.Configuration.deps.json
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\bin\Debug\net6.0\Xunit.Configuration.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\bin\Debug\net6.0\Xunit.Configuration.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\bin\Debug\net6.0\Xunit.Model.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\bin\Debug\net6.0\Xunit.Model.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\obj\Debug\net6.0\Xunit.Configuration.csproj.AssemblyReference.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\obj\Debug\net6.0\Xunit.Configuration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\obj\Debug\net6.0\Xunit.Configuration.AssemblyInfoInputs.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\obj\Debug\net6.0\Xunit.Configuration.AssemblyInfo.cs
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\obj\Debug\net6.0\Xunit.Configuration.csproj.CoreCompileInputs.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\obj\Debug\net6.0\Xunit.Configuration.sourcelink.json
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\obj\Debug\net6.0\Xunit.Co.58A2D990.Up2Date
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\obj\Debug\net6.0\Xunit.Configuration.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\obj\Debug\net6.0\refint\Xunit.Configuration.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\obj\Debug\net6.0\Xunit.Configuration.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Xunit.Configuration\obj\Debug\net6.0\ref\Xunit.Configuration.dll

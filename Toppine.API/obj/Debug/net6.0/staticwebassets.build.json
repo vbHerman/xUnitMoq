@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "0ZYo4siKamU+73N6CwIw/oHqu1+GFiqCZFFbXkDCgLY=",
+  "Source": "Toppine.API",
+  "BasePath": "_content/Toppine.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
