@@ -1,63 +1,63 @@
-﻿using Toppine.Caching.Redis;
-using SqlSugar;
-using System;
-using System.Collections.Generic;
+﻿//using Toppine.Caching.Redis;
+//
+//using System;
+//using System.Collections.Generic;
 
 
-namespace Toppine.Caching.SqlSugar
-{
-    public class SqlSugarRedisCache : ICacheService
-    {
-        readonly RedisCacheManager _service = null;
+//namespace Toppine.Caching.SqlSugar
+//{
+//    public class SqlSugarRedisCache : ICacheService
+//    {
+//        readonly RedisCacheManager _service = null;
 
-        public SqlSugarRedisCache()
-        {
-            _service = new RedisCacheManager(); ;
-        }
+//        public SqlSugarRedisCache()
+//        {
+//            _service = new RedisCacheManager(); ;
+//        }
 
-        public void Add<TV>(string key, TV value)
-        {
-            _service.Set(key, value);
-        }
+//        public void Add<TV>(string key, TV value)
+//        {
+//            _service.Set(key, value);
+//        }
 
-        public void Add<TV>(string key, TV value, int cacheDurationInSeconds)
-        {
-            _service.Set(key, value, cacheDurationInSeconds);
-        }
+//        public void Add<TV>(string key, TV value, int cacheDurationInSeconds)
+//        {
+//            _service.Set(key, value, cacheDurationInSeconds);
+//        }
 
-        public bool ContainsKey<TV>(string key)
-        {
-            return _service.Exists(key);
-        }
+//        public bool ContainsKey<TV>(string key)
+//        {
+//            return _service.Exists(key);
+//        }
 
-        public TV Get<TV>(string key)
-        {
-            return _service.Get<TV>(key);
-        }
+//        public TV Get<TV>(string key)
+//        {
+//            return _service.Get<TV>(key);
+//        }
 
-        public IEnumerable<string> GetAllKey<TV>()
-        {
+//        public IEnumerable<string> GetAllKey<TV>()
+//        {
 
-            return _service.SearchCacheRegex("SqlSugarDataCache.*");
-        }
+//            return _service.SearchCacheRegex("SqlSugarDataCache.*");
+//        }
 
-        public TV GetOrCreate<TV>(string cacheKey, Func<TV> create, int cacheDurationInSeconds = int.MaxValue)
-        {
-            if (this.ContainsKey<TV>(cacheKey))
-            {
-                return this.Get<TV>(cacheKey);
-            }
-            else
-            {
-                var result = create();
-                this.Add(cacheKey, result, cacheDurationInSeconds);
-                return result;
-            }
-        }
+//        public TV GetOrCreate<TV>(string cacheKey, Func<TV> create, int cacheDurationInSeconds = int.MaxValue)
+//        {
+//            if (this.ContainsKey<TV>(cacheKey))
+//            {
+//                return this.Get<TV>(cacheKey);
+//            }
+//            else
+//            {
+//                var result = create();
+//                this.Add(cacheKey, result, cacheDurationInSeconds);
+//                return result;
+//            }
+//        }
 
-        public void Remove<TV>(string key)
-        {
-            _service.Remove(key);
-        }
-    }
-}
+//        public void Remove<TV>(string key)
+//        {
+//            _service.Remove(key);
+//        }
+//    }
+//}

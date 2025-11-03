@@ -1,8 +1,13 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 using Toppine.Configuration;
 using Toppine.Core.AutoFac;
-using Toppine.Core.Config;
+using Toppine.Data;
+using Toppine.IRepository;
+using Toppine.Repository;
+using Toppine.Services;
+using Toppine.Caching;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton(new AppSettingsHelper(builder.Environment.ContentRootPath));
@@ -11,11 +16,29 @@ builder.Services.AddControllers();
 
 // 2. 注册服务（接口与实现类绑定，支持依赖注入）
 
+builder.Services.Configure<RedisConfig>(
+    builder.Configuration.GetSection("RedisConfig") // 读取RedisConfig节点
+);
+// 配置 EF Core
+builder.Services.AddDbContext<DBSQLContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
+//// 配置 SqlSugar
+//builder.Services.AddScoped<ISqlSugarClient>(provider =>
+//{
+//    var sqlSugar = new SqlSugarScope(new ConnectionConfig()
+//    {
+//        ConnectionString = builder.Configuration.GetConnectionString("SqlConnection"),
+//        DbType = DbType.SqlServer,
+//        IsAutoCloseConnection = true
+//    });
+//    return sqlSugar;
+//});
 
-//添加数据库连接SqlSugar注入支持
-builder.Services.AddSqlSugarSetup();
-//MediatR（只需要注册一个,同项目或类库下就不需要注册多个）
-//builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(TextMessageEventCommand).Assembly));
+////添加数据库连接SqlSugar注入支持
+//builder.Services.AddSqlSugarSetup();
+// 1. 注册Redis配置（绑定appsettings.json中的RedisConfig节点）
+
+
 // 3. 配置 Swagger（默认已包含，这里补充文档信息）
 builder.Services.AddSwaggerGen(options =>
 {
@@ -27,6 +50,9 @@ builder.Services.AddSwaggerGen(options =>
         Description = "包含接口、实现类、依赖注入和Swagger的示例"
     });
 });
+builder.Services.AddScoped<IRRFRepository, RRFRepository>();  // 注册专用仓储
+builder.Services.AddScoped<RRFService>();
+builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
@@ -38,6 +64,7 @@ var app = builder.Build();
 // 4. 开发环境启用Swagger UI
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage(); // 优先加载，显示详细错误
     app.UseSwagger(); // 生成Swagger文档
     app.UseSwaggerUI(options =>
     {

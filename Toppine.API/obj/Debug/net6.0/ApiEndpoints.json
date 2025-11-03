@@ -1,5 +1,25 @@
 [
   {
+    "ContainingType": "Toppine.API.Controllers.AWOSBaseController",
+    "Method": "GetDistrictSubconPermisson",
+    "RelativePath": "api/RRF",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Toppine.Model.ViewModels.DTO.DistrictSubconPermissonDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Toppine.API.Controllers.RRFController",
     "Method": "InitAsync",
     "RelativePath": "api/RRF/init",

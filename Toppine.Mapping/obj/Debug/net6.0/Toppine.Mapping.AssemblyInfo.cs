@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Toppine.Mapping")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e8aed8f0ad4851edeff82f354fb6d3141299ab5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6be61bc3f7ba80741e5b2b5e6a9d413e004a51a3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Toppine.Mapping")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Toppine.Mapping")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

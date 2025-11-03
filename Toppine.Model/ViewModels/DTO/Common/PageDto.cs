@@ -1,5 +1,4 @@
-﻿using SqlSugar;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
@@ -37,18 +36,14 @@ namespace Toppine.Model.ViewModels.DTO
         /// <summary>
         /// 用户名
         /// </summary>
-        [Display(Name = "LoginName")]
-        [SugarColumn(ColumnDescription = "LoginName", IsNullable = true)]
         public virtual string LoginName { get; set; }
         /// <summary>
         /// 用户ID
         /// </summary>
-        [Display(Name = "UID")]
-        [SugarColumn(ColumnDescription = "UID", IsNullable = true)]
         public int? UID { get; set; }
 
         //保存权限的列表
-        [SugarColumn(IsIgnore = true)]
+        [NotMapped]
         public DistrictSubconPermissonDto DSPermission { get; set; }
 
     }

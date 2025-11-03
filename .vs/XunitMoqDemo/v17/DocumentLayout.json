@@ -7,32 +7,40 @@
       "RelativeMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|solutionrelative:toppine.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.repository\\02 inventory\\subconinventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|solutionrelative:toppine.repository\\02 inventory\\subconinventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAF96983-C7A1-42C3-B96B-CF4A093847F8}|Toppine.Services\\Toppine.Services.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.services\\rrf\\rrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAF96983-C7A1-42C3-B96B-CF4A093847F8}|Toppine.Services\\Toppine.Services.csproj|solutionrelative:toppine.services\\rrf\\rrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.repository\\03 page\\rrf\\rrfrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|solutionrelative:toppine.repository\\03 page\\rrf\\rrfrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.repository\\03 page\\subconlogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|solutionrelative:toppine.repository\\03 page\\subconlogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|solutionrelative:toppine.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.api\\controllers\\rrfcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|solutionrelative:toppine.api\\controllers\\rrfcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4BB70AF2-9F81-4D4F-9DCD-FAEC9F7A2CE7}|Toppine.Model\\Toppine.Model.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.model\\entities\\03 page\\rrf\\rrf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BB70AF2-9F81-4D4F-9DCD-FAEC9F7A2CE7}|Toppine.Model\\Toppine.Model.csproj|solutionrelative:toppine.model\\entities\\03 page\\rrf\\rrf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.api\\controllers\\00 common\\awosbasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{731A4F34-433E-4361-B077-4EB9789F767A}|Toppine.API\\Toppine.API.csproj|solutionrelative:toppine.api\\controllers\\00 common\\awosbasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4BB70AF2-9F81-4D4F-9DCD-FAEC9F7A2CE7}|Toppine.Model\\Toppine.Model.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.model\\viewmodels\\dto\\common\\pagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BB70AF2-9F81-4D4F-9DCD-FAEC9F7A2CE7}|Toppine.Model\\Toppine.Model.csproj|solutionrelative:toppine.model\\viewmodels\\dto\\common\\pagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E602E0B8-F718-497F-8214-163C826ED0A0}|Toppine.Caching\\Toppine.Caching.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.caching\\redis\\manualdatacache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E602E0B8-F718-497F-8214-163C826ED0A0}|Toppine.Caching\\Toppine.Caching.csproj|solutionrelative:toppine.caching\\redis\\manualdatacache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.repository\\03 page\\subconlogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|solutionrelative:toppine.repository\\03 page\\subconlogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF96983-C7A1-42C3-B96B-CF4A093847F8}|Toppine.Services\\Toppine.Services.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.services\\rrf\\rrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAF96983-C7A1-42C3-B96B-CF4A093847F8}|Toppine.Services\\Toppine.Services.csproj|solutionrelative:toppine.services\\rrf\\rrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|solutionrelative:toppine.repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.repository\\03 page\\rrf\\rrfrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0D32EFA-23E4-48DD-AF53-2A6973723104}|Toppine.Repository\\Toppine.Repository.csproj|solutionrelative:toppine.repository\\03 page\\rrf\\rrfrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB1043CE-3F64-415F-A694-C6ECF61DE9F9}|Toppine.IRepository\\Toppine.IRepository.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.irepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB1043CE-3F64-415F-A694-C6ECF61DE9F9}|Toppine.IRepository\\Toppine.IRepository.csproj|solutionrelative:toppine.irepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C11D5104-E448-42FD-A1EA-6E59806A1838}|Toppine.IServices\\Toppine.IServices.csproj|c:\\users\\11240\\desktop\\herman-1\\leare\\xunitmoq\\xunitmoqdemo\\toppine.iservices\\rrf\\irrfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,19 +54,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "RRF.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Entities\\03 Page\\RRF\\RRF.cs",
-              "RelativeDocumentMoniker": "Toppine.Model\\Entities\\03 Page\\RRF\\RRF.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\Entities\\03 Page\\RRF\\RRF.cs",
-              "RelativeToolTip": "Toppine.Model\\Entities\\03 Page\\RRF\\RRF.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Title": "RRFService.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\RRF\\RRFService.cs",
+              "RelativeDocumentMoniker": "Toppine.Services\\RRF\\RRFService.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\RRF\\RRFService.cs",
+              "RelativeToolTip": "Toppine.Services\\RRF\\RRFService.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAgwAMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T07:02:20.277Z",
+              "WhenOpened": "2025-10-31T03:36:43.159Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IRRFService.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\RRF\\IRRFService.cs",
+              "RelativeDocumentMoniker": "Toppine.IServices\\RRF\\IRRFService.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\RRF\\IRRFService.cs",
+              "RelativeToolTip": "Toppine.IServices\\RRF\\IRRFService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwAgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T08:02:52.005Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -70,9 +92,22 @@
               "RelativeDocumentMoniker": "Toppine.API\\appsettings.json",
               "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\appsettings.json",
               "RelativeToolTip": "Toppine.API\\appsettings.json",
-              "ViewState": "AgIAAKsAAAAAAAAAAADwvwQAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-29T09:46:25.425Z",
+              "WhenOpened": "2025-11-03T09:47:29.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Program.cs",
+              "RelativeDocumentMoniker": "Toppine.API\\Program.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Program.cs",
+              "RelativeToolTip": "Toppine.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:47:28.658Z",
               "EditorCaption": ""
             },
             {
@@ -98,92 +133,93 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "RRFRepository.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\03 Page\\RRF\\RRFRepository.cs",
-              "RelativeDocumentMoniker": "Toppine.Repository\\03 Page\\RRF\\RRFRepository.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\03 Page\\RRF\\RRFRepository.cs",
-              "RelativeToolTip": "Toppine.Repository\\03 Page\\RRF\\RRFRepository.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAqwBIAAAAcAAAAAAAAAA==",
+              "Title": "AWOSBaseController.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Controllers\\00 Common\\AWOSBaseController.cs",
+              "RelativeDocumentMoniker": "Toppine.API\\Controllers\\00 Common\\AWOSBaseController.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Controllers\\00 Common\\AWOSBaseController.cs",
+              "RelativeToolTip": "Toppine.API\\Controllers\\00 Common\\AWOSBaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T09:44:11.645Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SubConLogRepository.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\03 Page\\SubConLogRepository.cs",
-              "RelativeDocumentMoniker": "Toppine.Repository\\03 Page\\SubConLogRepository.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\03 Page\\SubConLogRepository.cs",
-              "RelativeToolTip": "Toppine.Repository\\03 Page\\SubConLogRepository.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAcwC4AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T09:44:07.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SubConInventoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\02 Inventory\\SubConInventoryRepository.cs",
-              "RelativeDocumentMoniker": "Toppine.Repository\\02 Inventory\\SubConInventoryRepository.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\02 Inventory\\SubConInventoryRepository.cs",
-              "RelativeToolTip": "Toppine.Repository\\02 Inventory\\SubConInventoryRepository.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAIwBEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T09:41:50.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PageDto.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\ViewModels\\DTO\\Common\\PageDto.cs",
-              "RelativeDocumentMoniker": "Toppine.Model\\ViewModels\\DTO\\Common\\PageDto.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Model\\ViewModels\\DTO\\Common\\PageDto.cs",
-              "RelativeToolTip": "Toppine.Model\\ViewModels\\DTO\\Common\\PageDto.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAywCkAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T09:33:25.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RRFController.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Controllers\\RRFController.cs",
-              "RelativeDocumentMoniker": "Toppine.API\\Controllers\\RRFController.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Controllers\\RRFController.cs",
-              "RelativeToolTip": "Toppine.API\\Controllers\\RRFController.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAvwDAAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T02:16:13.55Z",
+              "WhenOpened": "2025-11-03T09:30:38.781Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RRFService.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\RRF\\RRFService.cs",
-              "RelativeDocumentMoniker": "Toppine.Services\\RRF\\RRFService.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Services\\RRF\\RRFService.cs",
-              "RelativeToolTip": "Toppine.Services\\RRF\\RRFService.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAYwDAAAAAIAAAAAAAAAA==",
+              "Title": "RRFController.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Controllers\\RRFController.cs",
+              "RelativeDocumentMoniker": "Toppine.API\\Controllers\\RRFController.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.API\\Controllers\\RRFController.cs",
+              "RelativeToolTip": "Toppine.API\\Controllers\\RRFController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwC4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T09:23:45.557Z",
+              "WhenOpened": "2025-11-03T09:30:33.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ManualDataCache.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Caching\\Redis\\ManualDataCache.cs",
+              "RelativeDocumentMoniker": "Toppine.Caching\\Redis\\ManualDataCache.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Caching\\Redis\\ManualDataCache.cs",
+              "RelativeToolTip": "Toppine.Caching\\Redis\\ManualDataCache.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAADwvxIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:29:02.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SubConLogRepository.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\03 Page\\SubConLogRepository.cs",
+              "RelativeDocumentMoniker": "Toppine.Repository\\03 Page\\SubConLogRepository.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\03 Page\\SubConLogRepository.cs",
+              "RelativeToolTip": "Toppine.Repository\\03 Page\\SubConLogRepository.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAcwC0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T09:28:36.715Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "IRRFService.cs",
-              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\RRF\\IRRFService.cs",
-              "RelativeDocumentMoniker": "Toppine.IServices\\RRF\\IRRFService.cs",
-              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IServices\\RRF\\IRRFService.cs",
-              "RelativeToolTip": "Toppine.IServices\\RRF\\IRRFService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAArwA8AAAATAAAAAAAAAA==",
+              "Title": "RRFRepository.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\03 Page\\RRF\\RRFRepository.cs",
+              "RelativeDocumentMoniker": "Toppine.Repository\\03 Page\\RRF\\RRFRepository.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\03 Page\\RRF\\RRFRepository.cs",
+              "RelativeToolTip": "Toppine.Repository\\03 Page\\RRF\\RRFRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T08:02:52.005Z"
+              "WhenOpened": "2025-11-03T07:57:37.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Toppine.Repository\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.Repository\\BaseRepository.cs",
+              "RelativeToolTip": "Toppine.Repository\\BaseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T08:01:40.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "Toppine.IRepository\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\11240\\Desktop\\Herman-1\\Leare\\XunitMoq\\XunitMoqDemo\\Toppine.IRepository\\IBaseRepository.cs",
+              "RelativeToolTip": "Toppine.IRepository\\IBaseRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T08:55:17.522Z",
+              "EditorCaption": ""
             }
           ]
         }

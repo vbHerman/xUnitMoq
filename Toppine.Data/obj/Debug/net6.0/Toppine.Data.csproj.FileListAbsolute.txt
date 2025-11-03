@@ -1,0 +1,16 @@
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\bin\Debug\net6.0\Toppine.Data.deps.json
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\bin\Debug\net6.0\Toppine.Data.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\bin\Debug\net6.0\Toppine.Data.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\bin\Debug\net6.0\Toppine.Model.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\bin\Debug\net6.0\Toppine.Model.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\obj\Debug\net6.0\Toppine.Data.csproj.AssemblyReference.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\obj\Debug\net6.0\Toppine.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\obj\Debug\net6.0\Toppine.Data.AssemblyInfoInputs.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\obj\Debug\net6.0\Toppine.Data.AssemblyInfo.cs
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\obj\Debug\net6.0\Toppine.Data.csproj.CoreCompileInputs.cache
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\obj\Debug\net6.0\Toppine.Data.sourcelink.json
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\obj\Debug\net6.0\Toppine..0927C535.Up2Date
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\obj\Debug\net6.0\Toppine.Data.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\obj\Debug\net6.0\refint\Toppine.Data.dll
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\obj\Debug\net6.0\Toppine.Data.pdb
+C:\Users\11240\Desktop\Herman-1\Leare\XunitMoq\XunitMoqDemo\Toppine.Data\obj\Debug\net6.0\ref\Toppine.Data.dll

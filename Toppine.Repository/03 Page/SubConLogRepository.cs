@@ -1,4 +1,5 @@
-﻿using SqlSugar;
+﻿using Microsoft.EntityFrameworkCore;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Toppine.Caching.Manual;
 using Toppine.Configuration;
+using Toppine.Data;
 using Toppine.IRepository;
-using Toppine.IRepository.UnitOfWork;
+
 using Toppine.Model.Entities;
 using Toppine.Model.ViewModels.DTO;
 
@@ -16,7 +18,8 @@ namespace Toppine.Repository
 {
     public  class SubConLogRepository:BaseRepository<SubConLog>, ISubConLogRepository
     {
-        public SubConLogRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
+        private DBSQLContext _db;
+        public SubConLogRepository(DbContext dbContext) : base(dbContext)
         {
         }
         /// <summary>
@@ -37,14 +40,13 @@ namespace Toppine.Repository
         public async Task<List<IntIDValueDescriptionDto>> UpdateItemDropCacheAsync()
         {
             var cacheKey = GlobalConstVars.CurrentPageName;
-            var itemList = await DbClient.Queryable<SubConLogInventory>()
+            var itemList = await _db.SubConLogInventory
                                     .Select(p => new IntIDValueDescriptionDto
                                     {
                                         ID = p.ID,
                                         Value = p.RemarkGroup,
                                         Description = p.Description,
                                     })
-                .With(SqlWith.NoLock)
                 .ToListAsync();
             // 存入缓存（项目中默认无过期时间，按需添加）
             ManualDataCache.Instance.Set(cacheKey, itemList);

@@ -11,7 +11,7 @@ namespace Toppine.API.Controllers;
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
-public class RRFController : ControllerBase
+public class RRFController :  AWOSBaseController
 {
     // 注入服务接口（而非具体实现类，符合面向接口编程）
     private readonly IRRFService _rrfService;
@@ -35,19 +35,26 @@ public class RRFController : ControllerBase
         {
             return BadRequest("用户名不能为空");
         }
-
+      
         var message = _rrfService.GetWelcomeMessage(name);
         return Ok(message);
     }
 
     [HttpGet("init")]
-    [Description("初始化API")]
     public async Task<IActionResult> InitAsync([FromQuery] FMInitial para)
     {
         //除登录API外，所有其它API的参数需要带上当前登录用户ID[默认继承BaseDto，如果没值，从token中获取]
-        //GetUID(para);
+        GetUID(para);
         return Ok(await _rrfService.InitAsync(para));
     }
+
+    //[HttpGet("Search")]
+    //public async Task<IActionResult> Search([FromQuery] SearchKeyDropDto para)
+    //{
+    //    GetUID(para);
+
+    //    return Ok(await _rrfService.SearchAsync(para));
+    //}
 }
 
 

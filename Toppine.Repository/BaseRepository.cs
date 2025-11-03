@@ -3,1293 +3,377 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Toppine.IRepository;
-using Toppine.IRepository.UnitOfWork;
 using Toppine.Model.ViewModels.Basics;
-using SqlSugar;
+using Microsoft.EntityFrameworkCore;
+using Toppine.Model.ViewModels.DTO.Common;
 
 namespace Toppine.Repository
 {
-    public abstract class BaseRepository<T> : IBaseRepository<T> where T : class, new()
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        //private readonly IUnitOfWork _unitOfWork;
-        private readonly SqlSugarScope _dbBase;
+        private readonly DbContext _db;
+        private readonly DbSet<T> _dbSet;
 
-        protected BaseRepository(IUnitOfWork unitOfWork)
+        public BaseRepository(DbContext dbContext)
         {
-            //_unitOfWork = unitOfWork;
-            _dbBase = unitOfWork.GetDbClient();
-        }
-
-        private ISqlSugarClient DbBaseClient => _dbBase;
-
-        protected ISqlSugarClient DbClient => DbBaseClient;
-
-        /// <summary>
-        ///     根据主值查询单条数据
-        /// </summary>
-        /// <param name="pkValue">主键值</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns>泛型实体</returns>
-        public T QueryById(object pkValue, bool blUseNoLock = false)
-        {
-            return DbBaseClient
-                .Queryable<T>()
-                .WithNoLockOrNot(blUseNoLock)
-                .InSingle(pkValue);
+            _db = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+            _dbSet = _db.Set<T>();
         }
 
         /// <summary>
-        ///     根据主值查询单条数据
+        /// 根据主键查询单条记录
         /// </summary>
-        /// <param name="objId">id（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns>数据实体</returns>
-        public async Task<T> QueryByIdAsync(object objId, bool blUseNoLock = false)
+        public async Task<T> GetByIdAsync(object id)
         {
-            return await DbBaseClient
-                .Queryable<T>()
-                .In(objId)
-                .WithNoLockOrNot(blUseNoLock)
-                .SingleAsync();
+            return await _dbSet.FindAsync(id);
         }
 
         /// <summary>
-        ///     根据主值列表查询单条数据
+        /// 根据主键查询单条记录（支持复合主键）
         /// </summary>
-        /// <param name="lstIds">id列表（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param>
-        /// <returns>数据实体列表</returns>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        public List<T> QueryByIDs(object[] lstIds, bool blUseNoLock = false)
+        public async Task<T> GetByIdAsync(params object[] keyValues)
         {
-            return DbBaseClient
-                .Queryable<T>()
-                .In(lstIds)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToList();
+            return await _dbSet.FindAsync(keyValues);
         }
 
         /// <summary>
-        ///     根据主值列表查询单条数据
+        /// 查询单条记录
         /// </summary>
-        /// <param name="lstIds">id列表（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param>
-        /// <returns>数据实体列表</returns>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        public async Task<List<T>> QueryByIDsAsync(object[] lstIds, bool blUseNoLock = false)
+        public async Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> predicate, bool asNoTracking = false)
         {
-            return await DbBaseClient
-                .Queryable<T>()
-                .In(lstIds)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToListAsync();
+            var query = _db.Set<T>().Where(predicate);
+
+            if (asNoTracking)
+            {
+                query = query.AsNoTracking();
+            }
+
+            return await query.FirstOrDefaultAsync();
         }
 
         /// <summary>
-        ///     根据主值列表查询单条数据
+        /// 查询所有记录
         /// </summary>
-        /// <param name="lstIds">id列表（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param>
-        /// <returns>数据实体列表</returns>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        public List<T> QueryByIDs(int[] lstIds, bool blUseNoLock = false)
+        public async Task<List<T>> GetAllAsync(bool asNoTracking = false)
         {
-            return DbBaseClient
-                .Queryable<T>()
-                .In(lstIds)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToList();
+            var query = _dbSet.AsQueryable();
+
+            if (asNoTracking)
+            {
+                query = query.AsNoTracking();
+            }
+
+            return await query.ToListAsync();
         }
 
         /// <summary>
-        ///     根据主值列表查询单条数据
+        /// 根据条件查询列表
         /// </summary>
-        /// <param name="lstIds">id列表（必须指定主键特性 [SugarColumn(IsPrimaryKey=true)]），如果是联合主键，请使用Where条件</param>
-        /// <returns>数据实体列表</returns>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        public async Task<List<T>> QueryByIDsAsync(int[] lstIds, bool blUseNoLock = false)
+        public async Task<List<T>> GetListAsync(Expression<Func<T, bool>> predicate, bool asNoTracking = false)
         {
-            return await DbBaseClient
-                .Queryable<T>()
-                .In(lstIds)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToListAsync();
+            var query = _dbSet.Where(predicate);
+
+            if (asNoTracking)
+            {
+                query = query.AsNoTracking();
+            }
+
+            return await query.ToListAsync();
         }
 
         /// <summary>
-        ///     查询表单所有数据(无分页,请慎用)
+        /// 根据条件查询列表（带排序）
         /// </summary>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public List<T> Query(bool blUseNoLock = false)
+        public async Task<List<T>> GetListAsync<TKey>(
+            Expression<Func<T, bool>> predicate,
+            Expression<Func<T, TKey>> orderBy,
+            bool isDescending = false,
+            bool asNoTracking = false)
         {
-            return DbBaseClient
-                .Queryable<T>()
-                .WithNoLockOrNot(blUseNoLock)
-                .ToList();
+            var query = _dbSet.Where(predicate);
+
+            if (isDescending)
+            {
+                query = query.OrderByDescending(orderBy);
+            }
+            else
+            {
+                query = query.OrderBy(orderBy);
+            }
+
+            if (asNoTracking)
+            {
+                query = query.AsNoTracking();
+            }
+
+            return await query.ToListAsync();
         }
 
         /// <summary>
-        ///     查询表单所有数据(无分页,请慎用)
+        /// 新增实体
         /// </summary>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public async Task<List<T>> QueryAsync(bool blUseNoLock = false)
+        public async Task<T> AddAsync(T entity)
         {
-            return await DbBaseClient
-                .Queryable<T>()
-                .WithNoLockOrNot(blUseNoLock)
-                .ToListAsync();
+            await _dbSet.AddAsync(entity);
+            await _db.SaveChangesAsync();
+            return entity;
         }
 
         /// <summary>
-        ///     根据条件查询数据
+        /// 批量新增实体
         /// </summary>
-        /// <param name="strWhere">条件</param>
-        /// <param name="orderBy">排序字段，如name asc,age desc</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns>泛型实体集合</returns>
-        public List<T> QueryListByClause(string strWhere, string orderBy = "", bool blUseNoLock = false)
+        public async Task AddRangeAsync(IEnumerable<T> entities)
         {
-            return DbBaseClient
-                .Queryable<T>()
-                .OrderByIF(!string.IsNullOrEmpty(orderBy), orderBy)
-                .WhereIF(!string.IsNullOrEmpty(strWhere), strWhere)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToList();
+            await _dbSet.AddRangeAsync(entities);
+            await _db.SaveChangesAsync();
         }
 
         /// <summary>
-        ///     根据条件查询数据
+        /// 更新实体
         /// </summary>
-        /// <param name="strWhere">条件</param>
-        /// <param name="orderBy">排序字段，如name asc,age desc</param>
-        /// <returns>泛型实体集合</returns>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        public async Task<List<T>> QueryListByClauseAsync(string strWhere, string orderBy = "",
-            bool blUseNoLock = false)
+        public async Task UpdateAsync(T entity)
         {
-            return await DbBaseClient
-                .Queryable<T>()
-                .OrderByIF(!string.IsNullOrEmpty(orderBy), orderBy)
-                .WhereIF(!string.IsNullOrEmpty(strWhere), strWhere)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToListAsync();
+            _dbSet.Update(entity);
+            await _db.SaveChangesAsync();
         }
 
         /// <summary>
-        ///     根据条件查询数据
+        /// 批量更新实体
         /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="orderBy">排序字段，如name asc,age desc</param>
-        /// <returns>泛型实体集合</returns>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        public List<T> QueryListByClause(Expression<Func<T, bool>> predicate, string orderBy = "",
-            bool blUseNoLock = false)
+        public async Task UpdateRangeAsync(IEnumerable<T> entities)
         {
-            return DbBaseClient
-                .Queryable<T>()
-                .OrderByIF(!string.IsNullOrEmpty(orderBy), orderBy)
-                .WhereIF(predicate != null, predicate)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToList();
+            _dbSet.UpdateRange(entities);
+            await _db.SaveChangesAsync();
         }
 
         /// <summary>
-        ///     根据条件查询数据
+        /// 删除实体
         /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="orderBy">排序字段，如name asc,age desc</param>
-        /// <returns>泛型实体集合</returns>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        public async Task<List<T>> QueryListByClauseAsync(Expression<Func<T, bool>> predicate, string orderBy = "",
-            bool blUseNoLock = false)
+        public async Task DeleteAsync(T entity)
         {
-            return await DbBaseClient
-                .Queryable<T>()
-                .OrderByIF(!string.IsNullOrEmpty(orderBy), orderBy)
-                .WhereIF(predicate != null, predicate)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToListAsync();
+            _dbSet.Remove(entity);
+            await _db.SaveChangesAsync();
         }
 
         /// <summary>
-        ///     根据条件查询数据
+        /// 根据主键删除实体
         /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="orderByPredicate">排序字段</param>
-        /// <param name="orderByType">排序顺序</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns>泛型实体集合</returns>
-        public List<T> QueryListByClause(Expression<Func<T, bool>> predicate,
-            Expression<Func<T, object>> orderByPredicate, OrderByType orderByType, bool blUseNoLock = false)
-        {
-            return DbBaseClient
-                .Queryable<T>()
-                .OrderByIF(orderByPredicate != null, orderByPredicate, orderByType)
-                .WhereIF(predicate != null, predicate)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToList();
-        }
-
-        /// <summary>
-        ///     根据条件查询数据
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="orderByPredicate">排序字段</param>
-        /// <param name="orderByType">排序顺序</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns>泛型实体集合</returns>
-        public async Task<List<T>> QueryListByClauseAsync(Expression<Func<T, bool>> predicate,
-            Expression<Func<T, object>> orderByPredicate, OrderByType orderByType, bool blUseNoLock = false)
-        {
-            return await DbBaseClient
-                .Queryable<T>()
-                .OrderByIF(orderByPredicate != null, orderByPredicate, orderByType)
-                .WhereIF(predicate != null, predicate)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToListAsync();
-        }
-
-        /// <summary>
-        ///     根据条件查询一定数量数据
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="take">获取数量</param>
-        /// <param name="orderByPredicate">排序字段</param>
-        /// <param name="orderByType">排序顺序</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public List<T> QueryListByClause(Expression<Func<T, bool>> predicate, int take,
-            Expression<Func<T, object>> orderByPredicate, OrderByType orderByType, bool blUseNoLock = false)
-        {
-            return DbBaseClient
-                .Queryable<T>()
-                .OrderByIF(orderByPredicate != null, orderByPredicate, orderByType)
-                .WhereIF(predicate != null, predicate)
-                .Take(take)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToList();
-        }
-
-        /// <summary>
-        ///     根据条件查询一定数量数据
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="take">获取数量</param>
-        /// <param name="orderByPredicate">排序字段</param>
-        /// <param name="orderByType">排序顺序</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public async Task<List<T>> QueryListByClauseAsync(Expression<Func<T, bool>> predicate, int take,
-            Expression<Func<T, object>> orderByPredicate, OrderByType orderByType, bool blUseNoLock = false)
-        {
-            return await DbBaseClient
-                .Queryable<T>()
-                .OrderByIF(orderByPredicate != null, orderByPredicate, orderByType)
-                .WhereIF(predicate != null, predicate)
-                .Take(take)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToListAsync();
-        }
-
-        /// <summary>
-        ///     根据条件查询一定数量数据
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="take">获取数量</param>
-        /// <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public List<T> QueryListByClause(Expression<Func<T, bool>> predicate, int take, string strOrderByFileds = "",
-            bool blUseNoLock = false)
-        {
-            return DbBaseClient
-                .Queryable<T>()
-                .OrderByIF(!string.IsNullOrEmpty(strOrderByFileds), strOrderByFileds)
-                .Where(predicate)
-                .Take(take)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToList();
-        }
-
-        /// <summary>
-        ///     根据条件查询一定数量数据
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="take">获取数量</param>
-        /// <param name="strOrderByFileds">排序字段，如name asc,age desc</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public async Task<List<T>> QueryListByClauseAsync(Expression<Func<T, bool>> predicate, int take,
-            string strOrderByFileds = "", bool blUseNoLock = false)
-        {
-            return await DbBaseClient
-                .Queryable<T>()
-                .OrderByIF(!string.IsNullOrEmpty(strOrderByFileds), strOrderByFileds)
-                .Where(predicate)
-                .Take(take)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToListAsync();
-        }
-
-        /// <summary>
-        ///     根据条件查询数据
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public T QueryByClause(Expression<Func<T, bool>> predicate, bool blUseNoLock = false)
-        {
-            return DbBaseClient
-                .Queryable<T>()
-                .WithNoLockOrNot(blUseNoLock)
-                .First(predicate);
-        }
-
-        /// <summary>
-        ///     根据条件查询数据
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <param name="blUseTranLock">是否使用事务锁</param>
-        /// <param name="dbLockType">事务锁类型</param>
-        /// <returns></returns>
-        public async Task<T> QueryByClauseAsync(Expression<Func<T, bool>> predicate, bool blUseNoLock = false, bool blUseTranLock = false,
-            DbLockType dbLockType = DbLockType.Wait)
-        {
-            return blUseNoLock
-                ? await DbBaseClient.Queryable<T>().With(SqlWith.NoLock).FirstAsync(predicate)
-                : (blUseTranLock ? await DbBaseClient.Queryable<T>().TranLock(dbLockType).FirstAsync(predicate)
-                    : await DbBaseClient.Queryable<T>().FirstAsync(predicate));
-        }
-
-        /// <summary>
-        ///     根据条件查询数据
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="orderByPredicate">排序字段</param>
-        /// <param name="orderByType">排序顺序</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public T QueryByClause(Expression<Func<T, bool>> predicate, Expression<Func<T, object>> orderByPredicate,
-            OrderByType orderByType, bool blUseNoLock = false)
-        {
-            return DbBaseClient
-                .Queryable<T>()
-                .OrderBy(orderByPredicate, orderByType)
-                .WithNoLockOrNot(blUseNoLock)
-                .First(predicate);
-        }
-
-        /// <summary>
-        ///     根据条件查询数据
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="orderByPredicate">排序字段</param>
-        /// <param name="orderByType">排序顺序</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public async Task<T> QueryByClauseAsync(Expression<Func<T, bool>> predicate,
-            Expression<Func<T, object>> orderByPredicate, OrderByType orderByType, bool blUseNoLock = false)
-        {
-            return await DbBaseClient
-                .Queryable<T>()
-                .OrderBy(orderByPredicate, orderByType)
-                .WithNoLockOrNot(blUseNoLock)
-                .FirstAsync(predicate);
-        }
-
-        /// <summary>
-        ///     写入实体数据
-        /// </summary>
-        /// <param name="entity">实体数据</param>
-        /// <returns></returns>
-        public int Insert(T entity)
-        {
-            return DbBaseClient
-                .Insertable(entity)
-                .ExecuteReturnIdentity();
-        }
-
-        /// <summary>
-        ///     写入实体数据
-        /// </summary>
-        /// <param name="entity">实体数据</param>
-        /// <returns></returns>
-        public async Task<int> InsertAsync(T entity)
-        {
-            return await DbBaseClient
-                .Insertable(entity)
-                .ExecuteReturnIdentityAsync();
-        }
-
-        /// <summary>
-        ///     写入实体数据
-        /// </summary>
-        /// <param name="entity">实体数据</param>
-        /// <param name="insertColumns">插入的列</param>
-        /// <returns></returns>
-        public int Insert(T entity, Expression<Func<T, object>> insertColumns = null)
-        {
-            var insert = DbBaseClient.Insertable(entity);
-            if (insertColumns == null)
-                return insert.ExecuteReturnIdentity();
-            return insert.InsertColumns(insertColumns).ExecuteReturnIdentity();
-        }
-
-        /// <summary>
-        ///     写入实体数据
-        /// </summary>
-        /// <param name="entity">实体数据</param>
-        /// <param name="insertColumns">插入的列</param>
-        /// <returns></returns>
-        public async Task<int> InsertAsync(T entity, Expression<Func<T, object>> insertColumns = null)
-        {
-            var insert = DbBaseClient.Insertable(entity);
-            if (insertColumns == null)
-                return await insert.ExecuteReturnIdentityAsync();
-            return await insert.InsertColumns(insertColumns).ExecuteReturnIdentityAsync();
-        }
-
-        /// <summary>
-        ///     写入实体数据
-        /// </summary>
-        /// <param name="entity">实体类</param>
-        /// <param name="insertColumns">需插入的字段</param>
-        /// <returns></returns>
-        public bool InsertGuid(T entity, Expression<Func<T, object>> insertColumns = null)
-        {
-            var insert = DbBaseClient.Insertable(entity);
-            if (insertColumns == null)
-                return insert.ExecuteCommand() > 0;
-            return insert.InsertColumns(insertColumns).ExecuteCommand() > 0;
-        }
-
-        /// <summary>
-        ///     写入实体数据
-        /// </summary>
-        /// <param name="entity">实体类</param>
-        /// <param name="insertColumns">需插入的字段</param>
-        /// <returns></returns>
-        public async Task<bool> InsertGuidAsync(T entity, Expression<Func<T, object>> insertColumns = null)
-        {
-            var insert = DbBaseClient.Insertable(entity);
-            if (insertColumns == null)
-                return await insert.ExecuteCommandAsync() > 0;
-            return await insert.InsertColumns(insertColumns).ExecuteCommandAsync() > 0;
-        }
-
-        /// <summary>
-        ///     批量写入实体数据
-        /// </summary>
-        /// <param name="entity">实体类</param>
-        /// <returns></returns>
-        public int Insert(List<T> entity)
-        {
-            return DbBaseClient.Insertable(entity.ToArray()).ExecuteReturnIdentity();
-        }
-
-        /// <summary>
-        ///     批量写入实体数据
-        /// </summary>
-        /// <param name="entity">实体类</param>
-        /// <returns></returns>
-        public async Task<int> InsertAsync(List<T> entity)
-        {
-            return await DbBaseClient.Insertable(entity.ToArray()).ExecuteCommandAsync();
-        }
-
-        /// <summary>
-        ///     批量写入实体数据
-        /// </summary>
-        /// <param name="entity">实体类</param>
-        /// <returns></returns>
-        public async Task<int> InsertCommandAsync(List<T> entity)
-        {
-            return await DbBaseClient.Insertable(entity.ToArray()).ExecuteCommandAsync();
-        }
-
-        /// <summary>
-        ///     批量更新实体数据
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        public bool Update(List<T> entity)
-        {
-            return DbBaseClient.Updateable(entity).ExecuteCommandHasChange();
-        }
-
-        /// <summary>
-        ///     批量更新实体数据
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        public async Task<bool> UpdateAsync(List<T> entity)
-        {
-            return await DbBaseClient.Updateable(entity).ExecuteCommandHasChangeAsync();
-        }
-
-        /// <summary>
-        ///     更新实体数据
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        public bool Update(T entity)
-        {
-            return DbBaseClient.Updateable(entity).ExecuteCommandHasChange();
-        }
-
-        /// <summary>
-        ///     更新实体数据
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        public async Task<bool> UpdateAsync(T entity)
-        {
-            return await DbBaseClient.Updateable(entity).ExecuteCommandHasChangeAsync();
-        }
-
-        /// <summary>
-        ///     根据手写条件更新
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="strWhere"></param>
-        /// <returns></returns>
-        public bool Update(T entity, string strWhere)
-        {
-            return DbBaseClient.Updateable(entity).Where(strWhere).ExecuteCommandHasChange();
-        }
-
-        /// <summary>
-        ///     根据手写条件更新
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="strWhere"></param>
-        /// <returns></returns>
-        public async Task<bool> UpdateAsync(T entity, string strWhere)
-        {
-            return await DbBaseClient.Updateable(entity).Where(strWhere).ExecuteCommandHasChangeAsync();
-        }
-
-        /// <summary>
-        ///     根据手写sql语句更新数据
-        /// </summary>
-        /// <param name="strSql"></param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
-        public bool Update(string strSql, SugarParameter[] parameters = null)
-        {
-            return DbBaseClient.Ado.ExecuteCommand(strSql, parameters) > 0;
-        }
-
-        /// <summary>
-        ///     根据手写sql语句更新数据
-        /// </summary>
-        /// <param name="strSql"></param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
-        public async Task<bool> UpdateAsync(string strSql, SugarParameter[] parameters = null)
-        {
-            return await DbBaseClient.Ado.ExecuteCommandAsync(strSql, parameters) > 0;
-        }
-
-        /// <summary>
-        ///     更新某个字段
-        /// </summary>
-        /// <param name="columns">lamdba表达式,如it => new Student() { Name = "a", CreateTime = DateTime.Now }</param>
-        /// <param name="where">lamdba判断</param>
-        /// <returns></returns>
-        public bool Update(Expression<Func<T, T>> columns, Expression<Func<T, bool>> where)
-        {
-            var i = DbBaseClient.Updateable<T>().SetColumns(columns).Where(where).ExecuteCommand();
-            return i > 0;
-        }
-
-        /// <summary>
-        ///     更新某个字段
-        /// </summary>
-        /// <param name="columns">lamdba表达式,如it => new Student() { Name = "a", CreateTime = DateTime.Now }</param>
-        /// <param name="where">lamdba判断</param>
-        /// <returns></returns>
-        public async Task<bool> UpdateAsync(Expression<Func<T, T>> columns, Expression<Func<T, bool>> where)
-        {
-            return await DbBaseClient.Updateable<T>().SetColumns(columns).Where(where).ExecuteCommandHasChangeAsync();
-        }
-
-        /// <summary>
-        ///     根据条件更新
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="lstColumns"></param>
-        /// <param name="lstIgnoreColumns"></param>
-        /// <param name="strWhere"></param>
-        /// <returns></returns>
-        public async Task<bool> UpdateAsync(T entity, List<string> lstColumns = null,
-            List<string> lstIgnoreColumns = null, string strWhere = "")
-        {
-            var up = DbBaseClient.Updateable(entity);
-            if (lstIgnoreColumns != null && lstIgnoreColumns.Count > 0)
-                up = up.IgnoreColumns(lstIgnoreColumns.ToArray());
-            if (lstColumns != null && lstColumns.Count > 0) up = up.UpdateColumns(lstColumns.ToArray());
-            if (!string.IsNullOrEmpty(strWhere)) up = up.Where(strWhere);
-            return await up.ExecuteCommandHasChangeAsync();
-        }
-
-        /// <summary>
-        ///     根据条件更新
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="lstColumns"></param>
-        /// <param name="lstIgnoreColumns"></param>
-        /// <param name="strWhere"></param>
-        /// <returns></returns>
-        public bool Update(T entity, List<string> lstColumns = null, List<string> lstIgnoreColumns = null,
-            string strWhere = "")
-        {
-            var up = DbBaseClient.Updateable(entity);
-            if (lstIgnoreColumns != null && lstIgnoreColumns.Count > 0)
-                up = up.IgnoreColumns(lstIgnoreColumns.ToArray());
-            if (lstColumns != null && lstColumns.Count > 0) up = up.UpdateColumns(lstColumns.ToArray());
-            if (!string.IsNullOrEmpty(strWhere)) up = up.Where(strWhere);
-            return up.ExecuteCommandHasChange();
-        }
-
-        /// <summary>
-        ///     删除数据
-        /// </summary>
-        /// <param name="entity">实体类</param>
-        /// <returns></returns>
-        public bool Delete(T entity)
-        {
-            return DbBaseClient.Deleteable(entity).ExecuteCommandHasChange();
-        }
-
-        /// <summary>
-        ///     删除数据
-        /// </summary>
-        /// <param name="entity">实体类</param>
-        /// <returns></returns>
-        public async Task<bool> DeleteAsync(T entity)
-        {
-            return await DbBaseClient.Deleteable(entity).ExecuteCommandHasChangeAsync();
-        }
-
-        /// <summary>
-        ///     删除数据
-        /// </summary>
-        /// <param name="entity">实体类</param>
-        /// <returns></returns>
-        public bool Delete(IEnumerable<T> entity)
-        {
-            return DbBaseClient.Deleteable<T>(entity).ExecuteCommandHasChange();
-        }
-
-        /// <summary>
-        ///     删除数据
-        /// </summary>
-        /// <param name="entity">实体类</param>
-        /// <returns></returns>
-        public async Task<bool> DeleteAsync(IEnumerable<T> entity)
-        {
-            return await DbBaseClient.Deleteable<T>(entity).ExecuteCommandHasChangeAsync();
-        }
-
-        /// <summary>
-        ///     删除数据
-        /// </summary>
-        /// <param name="where">过滤条件</param>
-        /// <returns></returns>
-        public bool Delete(Expression<Func<T, bool>> where)
-        {
-            return DbBaseClient.Deleteable(where).ExecuteCommandHasChange();
-        }
-
-        /// <summary>
-        ///     删除数据
-        /// </summary>
-        /// <param name="where">过滤条件</param>
-        /// <returns></returns>
-        public async Task<bool> DeleteAsync(Expression<Func<T, bool>> where)
-        {
-            return await DbBaseClient.Deleteable(where).ExecuteCommandHasChangeAsync();
-        }
-
-        /// <summary>
-        ///     删除指定ID的数据
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public bool DeleteById(object id)
-        {
-            return DbBaseClient.Deleteable<T>(id).ExecuteCommandHasChange();
-        }
-
-        /// <summary>
-        ///     删除指定ID的数据
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         public async Task<bool> DeleteByIdAsync(object id)
         {
-            return await DbBaseClient.Deleteable<T>(id).ExecuteCommandHasChangeAsync();
+            var entity = await _dbSet.FindAsync(id);
+            if (entity == null)
+                return false;
+
+            _dbSet.Remove(entity);
+            await _db.SaveChangesAsync();
+            return true;
         }
 
         /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
+        /// 根据条件删除实体
         /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public bool DeleteByIds(int[] ids)
+        public async Task<int> DeleteAsync(Expression<Func<T, bool>> predicate)
         {
-            return DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChange();
+            var entities = await _dbSet.Where(predicate).ToListAsync();
+            if (!entities.Any())
+                return 0;
+
+            _dbSet.RemoveRange(entities);
+            return await _db.SaveChangesAsync();
         }
 
         /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
+        /// 批量删除实体
         /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public async Task<bool> DeleteByIdsAsync(int[] ids)
+        public async Task DeleteRangeAsync(IEnumerable<T> entities)
         {
-            return await DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChangeAsync();
+            _dbSet.RemoveRange(entities);
+            await _db.SaveChangesAsync();
         }
 
         /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
+        /// 判断是否存在满足条件的记录
         /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public bool DeleteByIds(long[] ids)
+        public async Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate)
         {
-            return DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChange();
+            return await _dbSet.AnyAsync(predicate);
         }
 
         /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
+        /// 获取记录数量
         /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public async Task<bool> DeleteByIdsAsync(long[] ids)
+        public async Task<int> CountAsync(Expression<Func<T, bool>> predicate = null)
         {
-            return await DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChangeAsync();
-        }
+            if (predicate == null)
+                return await _dbSet.CountAsync();
 
-
-        /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
-        /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public bool DeleteByIds(Guid[] ids)
-        {
-            return DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChange();
+            return await _dbSet.CountAsync(predicate);
         }
 
         /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
+        /// 分页查询
         /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public async Task<bool> DeleteByIdsAsync(Guid[] ids)
+        public async Task<(List<T> Items, int TotalCount)> GetPagedListAsync(
+            int pageIndex,
+            int pageSize,
+            Expression<Func<T, bool>> predicate = null,
+            Expression<Func<T, object>> orderBy = null,
+            bool isDescending = false,
+            bool asNoTracking = false)
         {
-            return await DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChangeAsync();
-        }
+            var query = _dbSet.AsQueryable();
 
+            // 条件过滤
+            if (predicate != null)
+            {
+                query = query.Where(predicate);
+            }
 
-        /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
-        /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public bool DeleteByIds(string[] ids)
-        {
-            return DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChange();
-        }
+            // 获取总数
+            var totalCount = await query.CountAsync();
 
-        /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
-        /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public async Task<bool> DeleteByIdsAsync(string[] ids)
-        {
-            return await DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChangeAsync();
-        }
+            // 排序
+            if (orderBy != null)
+            {
+                query = isDescending ? query.OrderByDescending(orderBy) : query.OrderBy(orderBy);
+            }
 
+            // 分页
+            query = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
-        /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
-        /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public bool DeleteByIds(List<int> ids)
-        {
-            return DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChange();
-        }
+            // 无跟踪查询
+            if (asNoTracking)
+            {
+                query = query.AsNoTracking();
+            }
 
-        /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
-        /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public async Task<bool> DeleteByIdsAsync(List<int> ids)
-        {
-            return await DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChangeAsync();
+            var items = await query.ToListAsync();
+
+            return (items, totalCount);
         }
 
         /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
+        /// 获取 IQueryable（用于复杂查询）
         /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public bool DeleteByIds(List<string> ids)
+        public IQueryable<T> GetQueryable(bool asNoTracking = false)
         {
-            return DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChange();
+            var query = _dbSet.AsQueryable();
+
+            if (asNoTracking)
+            {
+                query = query.AsNoTracking();
+            }
+
+            return query;
         }
 
         /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
+        /// 包含导航属性的查询
         /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public async Task<bool> DeleteByIdsAsync(List<string> ids)
+        public IQueryable<T> GetQueryableWithInclude(params Expression<Func<T, object>>[] includeProperties)
         {
-            return await DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChangeAsync();
+            IQueryable<T> query = _dbSet;
+
+            foreach (var includeProperty in includeProperties)
+            {
+                query = query.Include(includeProperty);
+            }
+
+            return query;
         }
 
         /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
+        /// 执行原生 SQL 查询
         /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public bool DeleteByIds(List<Guid> ids)
-        {
-            return DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChange();
-        }
+        //public async Task<List<T>> FromSqlAsync(string sql, params object[] parameters)
+        //{
+        //    return await _dbSet.FromSqlRaw(sql, parameters).ToListAsync();
+        //}
 
         /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
+        /// 执行 SQL 命令
         /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public async Task<bool> DeleteByIdsAsync(List<Guid> ids)
+        //public async Task<int> ExecuteSqlAsync(string sql, params object[] parameters)
+        //{
+        //    return await _db.Database.ExecuteSqlRawAsync(sql, parameters);
+        //}
+      
+      
+        public Task<IEnumerable<T>> GetListAsync(Expression<Func<T, bool>> predicate = null)
         {
-            return await DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChangeAsync();
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
-        /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public bool DeleteByIds(List<long> ids)
+        public Task<IPagedList<T>> GetPagedListAsync(int pageIndex, int pageSize, Expression<Func<T, bool>> predicate = null, string orderBy = "")
         {
-            return DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChange();
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        ///     删除指定ID集合的数据(批量删除)
-        /// </summary>
-        /// <param name="ids"></param>
-        /// <returns></returns>
-        public async Task<bool> DeleteByIdsAsync(List<long> ids)
+        public Task DeleteAsync(object id)
         {
-            return await DbBaseClient.Deleteable<T>().In(ids).ExecuteCommandHasChangeAsync();
+            throw new NotImplementedException();
         }
 
-
-        /// <summary>
-        ///     判断数据是否存在
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public bool Exists(Expression<Func<T, bool>> predicate, bool blUseNoLock = false)
+        Task IBaseRepository<T>.DeleteAsync(Expression<Func<T, bool>> predicate)
         {
-            return DbBaseClient.Queryable<T>().Where(predicate).WithNoLockOrNot(blUseNoLock).Any();
+            return DeleteAsync(predicate);
         }
+    }
+
+
+    /// <summary>
+    /// 分页列表抽象基类（实现IPagedList<T>接口，封装通用逻辑）
+    /// </summary>
+    /// <typeparam name="T">数据类型</typeparam>
+    public abstract class BasePagedList<T> : IPagedList<T>
+    {
+        // 实现IPagedList<T>的属性
+        public int PageIndex { get; protected set; }
+        public int PageSize { get; protected set; }
+        public int TotalCount { get; protected set; }
+        public int TotalPages { get; protected set; }
+        public IEnumerable<T> Items { get; protected set; }
 
         /// <summary>
-        ///     判断数据是否存在
+        /// 基类构造函数：计算总页数（通用逻辑）
         /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public async Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate, bool blUseNoLock = false)
+        /// <param name="pageIndex">页码（从0或1开始，根据业务定义）</param>
+        /// <param name="pageSize">页大小</param>
+        /// <param name="totalCount">总条数</param>
+        protected BasePagedList(int pageIndex, int pageSize, int totalCount)
         {
-            return await DbBaseClient.Queryable<T>().Where(predicate).WithNoLockOrNot(blUseNoLock).AnyAsync();
+            // 校验参数合法性（通用校验）
+            if (pageIndex < 0)
+                throw new ArgumentOutOfRangeException(nameof(pageIndex), "页码不能小于0");
+            if (pageSize <= 0)
+                throw new ArgumentOutOfRangeException(nameof(pageSize), "页大小必须大于0");
+            if (totalCount < 0)
+                throw new ArgumentOutOfRangeException(nameof(totalCount), "总条数不能小于0");
+
+            // 赋值基础属性
+            PageIndex = pageIndex;
+            PageSize = pageSize;
+            TotalCount = totalCount;
+
+            // 计算总页数（核心通用逻辑：向上取整）
+            TotalPages = TotalCount == 0 ? 0 : (int)Math.Ceiling(TotalCount / (double)PageSize);
         }
+       
+    }
 
+    public class PagedList<T> : BasePagedList<T>
+    {
         /// <summary>
-        ///     获取数据总数
+        /// 构造函数：接收分页数据并赋值
         /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public int GetCount(Expression<Func<T, bool>> predicate, bool blUseNoLock = false)
+        /// <param name="pageIndex">页码</param>
+        /// <param name="pageSize">页大小</param>
+        /// <param name="totalCount">总条数</param>
+        /// <param name="items">当前页数据</param>
+        public PagedList(int pageIndex, int pageSize, int totalCount, IEnumerable<T> items)
+            : base(pageIndex, pageSize, totalCount) // 调用基类构造函数（复用总页数计算）
         {
-            return DbBaseClient.Queryable<T>().WithNoLockOrNot(blUseNoLock).Count(predicate);
-        }
-
-        /// <summary>
-        ///     获取数据总数
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public async Task<int> GetCountAsync(Expression<Func<T, bool>> predicate, bool blUseNoLock = false)
-        {
-            return await DbBaseClient.Queryable<T>().WithNoLockOrNot(blUseNoLock).CountAsync(predicate);
-        }
-
-        /// <summary>
-        ///     获取数据某个字段的合计
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="field">字段</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public int GetSum(Expression<Func<T, bool>> predicate, Expression<Func<T, int>> field, bool blUseNoLock = false)
-        {
-            return DbBaseClient.Queryable<T>().Where(predicate).WithNoLockOrNot(blUseNoLock).Sum(field);
-        }
-
-        /// <summary>
-        ///     获取数据某个字段的合计
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="field">字段</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public async Task<int> GetSumAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, int>> field,
-            bool blUseNoLock = false)
-        {
-            return await DbBaseClient.Queryable<T>().Where(predicate).WithNoLockOrNot(blUseNoLock).SumAsync(field);
-        }
-
-        /// <summary>
-        ///     获取数据某个字段的合计
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="field">字段</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public decimal GetSum(Expression<Func<T, bool>> predicate, Expression<Func<T, decimal>> field,
-            bool blUseNoLock = false)
-        {
-            return DbBaseClient.Queryable<T>().Where(predicate).WithNoLockOrNot(blUseNoLock).Sum(field);
-        }
-
-        /// <summary>
-        ///     获取数据某个字段的合计
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="field">字段</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public async Task<decimal> GetSumAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, decimal>> field,
-            bool blUseNoLock = false)
-        {
-            return await DbBaseClient.Queryable<T>().Where(predicate).WithNoLockOrNot(blUseNoLock).SumAsync(field);
-        }
-
-        /// <summary>
-        ///     获取数据某个字段的合计
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="field">字段</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public float GetSum(Expression<Func<T, bool>> predicate, Expression<Func<T, float>> field,
-            bool blUseNoLock = false)
-        {
-            return DbBaseClient.Queryable<T>().Where(predicate).WithNoLockOrNot(blUseNoLock).Sum(field);
-        }
-
-        /// <summary>
-        ///     获取数据某个字段的合计
-        /// </summary>
-        /// <param name="predicate">条件表达式树</param>
-        /// <param name="field">字段</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public async Task<float> GetSumAsync(Expression<Func<T, bool>> predicate, Expression<Func<T, float>> field,
-            bool blUseNoLock = false)
-        {
-            return await DbBaseClient.Queryable<T>().Where(predicate).WithNoLockOrNot(blUseNoLock).SumAsync(field);
-        }
-
-        /// <summary>
-        ///     根据条件查询分页数据
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <param name="orderBy"></param>
-        /// <param name="pageIndex">当前页面索引</param>
-        /// <param name="pageSize">分布大小</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public IPageList<T> QueryPage(Expression<Func<T, bool>> predicate, string orderBy = "", int pageIndex = 1,
-            int pageSize = 20, bool blUseNoLock = false)
-        {
-            var totalCount = 0;
-            var page = DbBaseClient
-                        .Queryable<T>()
-                        .OrderByIF(!string.IsNullOrEmpty(orderBy), orderBy)
-                        .WhereIF(predicate != null, predicate)
-                        .WithNoLockOrNot(blUseNoLock)
-                        .ToPageList(pageIndex, pageSize, ref totalCount);
-
-            var list = new PageList<T>(page, pageIndex, pageSize, totalCount);
-            return list;
-        }
-
-        /// <summary>
-        ///     根据条件查询分页数据
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <param name="orderBy"></param>
-        /// <param name="pageIndex">当前页面索引</param>
-        /// <param name="pageSize">分布大小</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public async Task<IPageList<T>> QueryPageAsync(Expression<Func<T, bool>> predicate, string orderBy = "",
-            int pageIndex = 1, int pageSize = 20, bool blUseNoLock = false)
-        {
-            RefAsync<int> totalCount = 0;
-            var page = await DbBaseClient
-                        .Queryable<T>()
-                        .OrderByIF(!string.IsNullOrEmpty(orderBy), orderBy)
-                        .WhereIF(predicate != null, predicate)
-                        .WithNoLockOrNot(blUseNoLock)
-                        .ToPageListAsync(pageIndex, pageSize, totalCount);
-            var list = new PageList<T>(page, pageIndex, pageSize, totalCount);
-            return list;
-        }
-
-        /// <summary>
-        ///     根据条件查询分页数据
-        /// </summary>
-        /// <param name="predicate">判断集合</param>
-        /// <param name="orderByType">排序方式</param>
-        /// <param name="pageIndex">当前页面索引</param>
-        /// <param name="pageSize">分布大小</param>
-        /// <param name="orderByExpression"></param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public IPageList<T> QueryPage(Expression<Func<T, bool>> predicate,
-            Expression<Func<T, object>> orderByExpression, OrderByType orderByType, int pageIndex = 1,
-            int pageSize = 20, bool blUseNoLock = false)
-        {
-            var totalCount = 0;
-            var page = DbBaseClient
-                        .Queryable<T>()
-                        .OrderByIF(orderByExpression != null, orderByExpression, orderByType)
-                        .WhereIF(predicate != null, predicate)
-                        .WithNoLockOrNot(blUseNoLock)
-                        .ToPageList(pageIndex, pageSize, ref totalCount);
-
-            var list = new PageList<T>(page, pageIndex, pageSize, totalCount);
-            return list;
-        }
-
-        /// <summary>
-        ///     根据条件查询分页数据
-        /// </summary>
-        /// <param name="predicate">判断集合</param>
-        /// <param name="orderByType">排序方式</param>
-        /// <param name="pageIndex">当前页面索引</param>
-        /// <param name="pageSize">分布大小</param>
-        /// <param name="orderByExpression"></param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns></returns>
-        public async Task<IPageList<T>> QueryPageAsync(Expression<Func<T, bool>> predicate,
-            Expression<Func<T, object>> orderByExpression, OrderByType orderByType, int pageIndex = 1,
-            int pageSize = 20, bool blUseNoLock = false)
-        {
-            RefAsync<int> totalCount = 0;
-            var page = await DbBaseClient
-                        .Queryable<T>()
-                        .WhereIF(predicate != null, predicate)
-                        .OrderByIF(orderByExpression != null, orderByExpression, orderByType)
-                        .WithNoLockOrNot(blUseNoLock)
-                        .ToPageListAsync(pageIndex, pageSize, totalCount);
-
-            var list = new PageList<T>(page, pageIndex, pageSize, totalCount);
-            return list;
-        }
-
-        /// <summary>
-        ///     查询-2表查询
-        /// </summary>
-        /// <typeparam name="T1">实体1</typeparam>
-        /// <typeparam name="T2">实体2</typeparam>
-        /// <typeparam name="TResult">返回对象</typeparam>
-        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns>值</returns>
-        public List<TResult> QueryMuch<T1, T2, TResult>(
-            Expression<Func<T1, T2, object[]>> joinExpression,
-            Expression<Func<T1, T2, TResult>> selectExpression,
-            Expression<Func<T1, T2, bool>> whereLambda = null,
-            bool blUseNoLock = false) where T1 : class, new()
-        {
-            return DbBaseClient
-                .Queryable(joinExpression)
-                .WhereIF(whereLambda is not null, whereLambda)
-                .Select(selectExpression)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToList();
-        }
-
-        /// <summary>
-        ///     查询-多表查询
-        /// </summary>
-        /// <typeparam name="T1">实体1</typeparam>
-        /// <typeparam name="T2">实体2</typeparam>
-        /// <typeparam name="TResult">返回对象</typeparam>
-        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns>值</returns>
-        public async Task<List<TResult>> QueryMuchAsync<T1, T2, TResult>(
-            Expression<Func<T1, T2, object[]>> joinExpression,
-            Expression<Func<T1, T2, TResult>> selectExpression,
-            Expression<Func<T1, T2, bool>> whereLambda = null,
-            bool blUseNoLock = false) where T1 : class, new()
-        {
-            return await DbBaseClient
-                .Queryable(joinExpression)
-                .WhereIF(whereLambda is not null, whereLambda)
-                .Select(selectExpression)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToListAsync();
-        }
-
-        /// <summary>
-        ///     查询-二表查询
-        /// </summary>
-        /// <typeparam name="T1">实体1</typeparam>
-        /// <typeparam name="T2">实体2</typeparam>
-        /// <typeparam name="TResult">返回对象</typeparam>
-        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns>值</returns>
-        public TResult QueryMuchFirst<T1, T2, TResult>(
-            Expression<Func<T1, T2, object[]>> joinExpression,
-            Expression<Func<T1, T2, TResult>> selectExpression,
-            Expression<Func<T1, T2, bool>> whereLambda = null,
-            bool blUseNoLock = false) where T1 : class, new()
-        {
-            return DbBaseClient
-                .Queryable(joinExpression)
-                .WhereIF(whereLambda is not null, whereLambda)
-                .Select(selectExpression)
-                .WithNoLockOrNot(blUseNoLock)
-                .First();
-        }
-
-        /// <summary>
-        ///     查询-二表查询
-        /// </summary>
-        /// <typeparam name="T1">实体1</typeparam>
-        /// <typeparam name="T2">实体2</typeparam>
-        /// <typeparam name="TResult">返回对象</typeparam>
-        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns>值</returns>
-        public async Task<TResult> QueryMuchFirstAsync<T1, T2, TResult>(
-            Expression<Func<T1, T2, object[]>> joinExpression,
-            Expression<Func<T1, T2, TResult>> selectExpression,
-            Expression<Func<T1, T2, bool>> whereLambda = null,
-            bool blUseNoLock = false) where T1 : class, new()
-        {
-            return await DbBaseClient
-                .Queryable(joinExpression)
-                .WhereIF(whereLambda is not null, whereLambda)
-                .Select(selectExpression).WithNoLockOrNot(blUseNoLock)
-                .FirstAsync();
-        }
-
-        /// <summary>
-        ///     查询-三表查询
-        /// </summary>
-        /// <typeparam name="T">实体1</typeparam>
-        /// <typeparam name="T2">实体2</typeparam>
-        /// <typeparam name="T3">实体3</typeparam>
-        /// <typeparam name="TResult">返回对象</typeparam>
-        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns>值</returns>
-        public List<TResult> QueryMuch<T1, T2, T3, TResult>(
-            Expression<Func<T1, T2, T3, object[]>> joinExpression,
-            Expression<Func<T1, T2, T3, TResult>> selectExpression,
-            Expression<Func<T1, T2, T3, bool>> whereLambda = null,
-            bool blUseNoLock = false) where T1 : class, new()
-        {
-            return DbBaseClient
-                .Queryable(joinExpression)
-                .WhereIF(whereLambda is not null, whereLambda)
-                .Select(selectExpression)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToList();
-        }
-
-        /// <summary>
-        ///     查询-三表查询
-        /// </summary>
-        /// <typeparam name="T">实体1</typeparam>
-        /// <typeparam name="T2">实体2</typeparam>
-        /// <typeparam name="T3">实体3</typeparam>
-        /// <typeparam name="TResult">返回对象</typeparam>
-        /// <param name="joinExpression">关联表达式 (join1,join2) => new object[] {JoinType.Left,join1.UserNo==join2.UserNo}</param>
-        /// <param name="selectExpression">返回表达式 (s1, s2) => new { Id =s1.UserNo, Id1 = s2.UserNo}</param>
-        /// <param name="whereLambda">查询表达式 (w1, w2) =>w1.UserNo == "")</param>
-        /// <param name="blUseNoLock">是否使用WITH(NOLOCK)</param>
-        /// <returns>值</returns>
-        public async Task<List<TResult>> QueryMuchAsync<T1, T2, T3, TResult>(
-            Expression<Func<T1, T2, T3, object[]>> joinExpression,
-            Expression<Func<T1, T2, T3, TResult>> selectExpression,
-            Expression<Func<T1, T2, T3, bool>> whereLambda = null,
-            bool blUseNoLock = false) where T1 : class, new()
-        {
-            return await DbBaseClient
-                .Queryable(joinExpression)
-                .WhereIF(whereLambda is not null, whereLambda)
-                .Select(selectExpression)
-                .WithNoLockOrNot(blUseNoLock)
-                .ToListAsync();
-        }
-
-        /// <summary>
-        ///     执行sql语句并返回List<T>
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="sql"></param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
-        public List<T> SqlQuery(string sql, List<SugarParameter> parameters)
-        {
-            var list = DbBaseClient.Ado.SqlQuery<T>(sql, parameters);
-            return list;
-        }
-
-        /// <summary>
-        ///     执行sql语句并返回List<T>
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="sql"></param>
-        /// <returns></returns>
-        public async Task<List<T>> SqlQueryable(string sql)
-        {
-            var list = await DbBaseClient.SqlQueryable<T>(sql).ToListAsync();
-            return list;
+            Items = items ?? throw new ArgumentNullException(nameof(items), "分页数据不能为空");
         }
     }
 }

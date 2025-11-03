@@ -241,10 +241,6 @@
             "Autofac.Extras.DynamicProxy": {
               "target": "Package",
               "version": "[7.1.0, )"
-            },
-            "SqlSugar.IOC": {
-              "target": "Package",
-              "version": "[2.0.0, )"
             }
           },
           "imports": [
@@ -470,9 +466,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "SqlSugarCore": {
+            "Dapper": {
               "target": "Package",
-              "version": "[5.1.4.206, )"
+              "version": "[2.1.66, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.2, )"
             }
           },
           "imports": [

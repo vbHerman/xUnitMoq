@@ -7,14 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SqlSugar.IOC" Version="2.0.0" />
-    <PackageReference Include="SqlSugarCore" Version="5.1.4.206" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Toppine.Caching\Toppine.Caching.csproj" />
     <ProjectReference Include="..\Toppine.Configuration\Toppine.Configuration.csproj" />
     <ProjectReference Include="..\Toppine.Core\Toppine.Core.csproj" />
+    <ProjectReference Include="..\Toppine.Data\Toppine.Data.csproj" />
     <ProjectReference Include="..\Toppine.IRepository\Toppine.IRepository.csproj" />
     <ProjectReference Include="..\Toppine.Model\Toppine.Model.csproj" />
   </ItemGroup>

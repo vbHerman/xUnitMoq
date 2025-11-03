@@ -1,15 +1,15 @@
 ﻿
-using SqlSugar;
+//
 
-namespace Toppine.IRepository.UnitOfWork
-{
-    public interface IUnitOfWork
-    {
-        SqlSugarScope GetDbClient();
+//namespace Toppine.IRepository.UnitOfWork
+//{
+//    public interface IUnitOfWork
+//    {
+//        SqlSugarScope GetDbClient();
 
-        void BeginTran();
+//        void BeginTran();
 
-        void CommitTran();
-        void RollbackTran();
-    }
-}
+//        void CommitTran();
+//        void RollbackTran();
+//    }
+//}

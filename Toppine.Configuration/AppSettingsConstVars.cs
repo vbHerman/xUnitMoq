@@ -1,4 +1,4 @@
-﻿using SqlSugar.Extensions;
+﻿//using SqlSugar.Extensions;
 
 namespace Toppine.Configuration
 {
@@ -40,19 +40,19 @@ namespace Toppine.Configuration
         /// <summary>
         /// 启用redis作为缓存选择
         /// </summary>
-        public static readonly bool RedisUseCache = AppSettingsHelper.GetContent("RedisConfig", "UseCache").ObjToBool();
+        public static readonly bool RedisUseCache =bool.Parse( AppSettingsHelper.GetContent("RedisConfig", "UseCache"));
         /// <summary>
         /// 启用redis作为定时任务
         /// </summary>
-        public static readonly bool RedisUseTimedTask = AppSettingsHelper.GetContent("RedisConfig", "UseTimedTask").ObjToBool();
+        public static readonly bool RedisUseTimedTask = bool.Parse(AppSettingsHelper.GetContent("RedisConfig", "UseTimedTask") );
 
         #endregion
 
         #region AOP================================================================================
-        /// <summary>
-        /// 事务切面开关
-        /// </summary>
-        public static readonly bool TranAopEnabled = AppSettingsHelper.GetContent("TranAOP", "Enabled").ObjToBool();
+        ///// <summary>
+        ///// 事务切面开关
+        ///// </summary>
+        //public static readonly bool TranAopEnabled = AppSettingsHelper.GetContent("TranAOP", "Enabled").ObjToBool();
 
         #endregion
 
@@ -64,28 +64,28 @@ namespace Toppine.Configuration
         #endregion
 
         #region Cors跨域设置================================================================================
-        public static readonly string CorsPolicyName = AppSettingsHelper.GetContent("Cors", "PolicyName");
-        public static readonly bool CorsEnableAllIPs = AppSettingsHelper.GetContent("Cors", "EnableAllIPs").ObjToBool();
-        public static readonly string CorsIPs = AppSettingsHelper.GetContent("Cors", "IPs");
+        //public static readonly string CorsPolicyName = AppSettingsHelper.GetContent("Cors", "PolicyName");
+        //public static readonly bool CorsEnableAllIPs = AppSettingsHelper.GetContent("Cors", "EnableAllIPs").ObjToBool();
+        //public static readonly string CorsIPs = AppSettingsHelper.GetContent("Cors", "IPs");
         #endregion
 
         #region Middleware中间件================================================================================
         /// <summary>
         /// Ip限流
         /// </summary>
-        public static readonly bool MiddlewareIpLogEnabled = AppSettingsHelper.GetContent("Middleware", "IPLog", "Enabled").ObjToBool();
+        //public static readonly bool MiddlewareIpLogEnabled = AppSettingsHelper.GetContent("Middleware", "IPLog", "Enabled").ObjToBool();
         /// <summary>
         /// 记录请求与返回数据
         /// </summary>
-        public static readonly bool MiddlewareRequestResponseLogEnabled = AppSettingsHelper.GetContent("Middleware", "RequestResponseLog", "Enabled").ObjToBool();
+        //public static readonly bool MiddlewareRequestResponseLogEnabled = AppSettingsHelper.GetContent("Middleware", "RequestResponseLog", "Enabled").ObjToBool();
         /// <summary>
         /// 用户访问记录-是否开启
         /// </summary>
-        public static readonly bool MiddlewareRecordAccessLogsEnabled = AppSettingsHelper.GetContent("Middleware", "RecordAccessLogs", "Enabled").ObjToBool();
+       // public static readonly bool MiddlewareRecordAccessLogsEnabled = AppSettingsHelper.GetContent("Middleware", "RecordAccessLogs", "Enabled").ObjToBool();
         /// <summary>
         /// 用户访问记录-过滤ip
         /// </summary>
-        public static readonly string MiddlewareRecordAccessLogsIgnoreApis = AppSettingsHelper.GetContent("Middleware", "RecordAccessLogs", "IgnoreApis");
+        //public static readonly string MiddlewareRecordAccessLogsIgnoreApis = AppSettingsHelper.GetContent("Middleware", "RecordAccessLogs", "IgnoreApis");
 
         #endregion
 
